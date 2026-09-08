@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecionando...</title>
+    <script>
+      // Single Page Application redirect para GitHub Pages
+      // Converte rotas diretas (ex: /links ou /bio) em parâmetros de busca para o index.html
+      (function() {
+        var path = window.location.pathname;
+        var search = window.location.search;
+        var hash = window.location.hash;
+
+        // Se o caminho terminar com /links ou /bio
+        if (path.endsWith('/links') || path.endsWith('/bio')) {
+          var targetPage = path.endsWith('/bio') ? 'bio' : 'links';
+          var basePath = path.replace(/\/(links|bio)\/?$/, '');
+          window.location.replace(
+            basePath + '/?page=' + targetPage + (hash ? hash : '')
+          );
+        } else {
+          // Redireciona para a raiz preservando o path via hash
+          var segments = path.split('/').filter(Boolean);
+          // Redireciona para o index.html com o caminho restante
+          window.location.replace(window.location.origin + '/' + (segments.length > 0 ? segments[0] + '/' : ''));
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirecionando...</p>
+  </body>
+</html>
