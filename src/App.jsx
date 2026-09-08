@@ -11,6 +11,7 @@ import BioLinks from './components/BioLinks';
 import { VISTAHAVEN_DATA } from './data/propertyData';
 import { ShieldCheck, ArrowUp } from 'lucide-react';
 import { slowScrollTo } from './utils/scrollUtils';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 import StructuredDataSEO from './components/StructuredDataSEO';
 
@@ -222,17 +223,20 @@ export default function App() {
         </div>
       </footer>
 
-      {/* Floating Slow Scroll to Top Button */}
+      {/* Floating Slow Scroll to Top Button (posicionado acima do WhatsApp) */}
       {showScrollTop && (
         <button
           onClick={() => slowScrollTo('top', 1000)}
-          className="fixed bottom-6 right-6 z-40 bg-purple-600/90 hover:bg-purple-600 text-white p-3 rounded-full shadow-2xl shadow-purple-900/40 backdrop-blur-md transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer animate-fadeIn flex items-center justify-center border border-purple-400/30 group"
+          className="fixed bottom-24 sm:bottom-25 right-6 z-40 bg-purple-600/90 hover:bg-purple-600 text-white p-3 rounded-full shadow-2xl shadow-purple-900/40 backdrop-blur-md transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer animate-fadeIn flex items-center justify-center border border-purple-400/30 group"
           aria-label="Voltar ao Topo Suavemente"
           title="Subir suavemente ao topo"
         >
           <ArrowUp size={18} className="group-hover:-translate-y-0.5 transition-transform" />
         </button>
       )}
+
+      {/* Botão Flutuante do WhatsApp para Mobile e Desktop */}
+      <FloatingWhatsApp />
 
       {/* Modal de Qualificação & Atendimento Exclusivo */}
       {isModalOpen && (
