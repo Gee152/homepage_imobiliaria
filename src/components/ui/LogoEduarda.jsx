@@ -19,10 +19,14 @@ export default function LogoEduarda({
       )}
     >
       <span
-        style={{ fontFamily: "'Italiana', serif" }}
+        style={{
+          fontFamily: "'Italiana', serif",
+          WebkitTextStroke: '0.85px #d4b2f1ff',
+          paintOrder: 'stroke fill',
+        }}
         className={cn(
-          "text-xl sm:text-2xl md:text-[1.65rem] tracking-[4px] sm:tracking-[5px] uppercase leading-none font-normal transition-colors",
-          isLight ? "text-white drop-shadow-sm" : "text-slate-900"
+          "text-xl sm:text-2xl md:text-[1.65rem] tracking-[4px] sm:tracking-[5px] uppercase leading-none transition-colors",
+          isLight ? "text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] font-normal" : "text-slate-950 font-medium"
         )}
       >
         Eduarda Jackes
