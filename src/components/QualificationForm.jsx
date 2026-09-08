@@ -6,12 +6,13 @@ export default function QualificationForm({ onLeadCaptured, isModal = false, onC
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submittedWhatsappUrl, setSubmittedWhatsappUrl] = useState('');
   
   const [formData, setFormData] = useState({
     name: '',
     whatsapp: '',
     email: '',
-    incomeBracket: 'R$ 500k a R$ 1MM',
+    incomeBracket: 'R$ 400k a R$ 700k',
     purpose: 'Moradia Própria',
     timeframe: 'Imediata (Até 30 dias)'
   });
@@ -34,6 +35,18 @@ export default function QualificationForm({ onLeadCaptured, isModal = false, onC
     e.preventDefault();
     setLoading(true);
 
+    const message = `Olá Eduarda Jackes! Gostaria de atendimento exclusivo para imóveis em Recife - PE.\n\n` +
+      `👤 *Nome:* ${formData.name}\n` +
+      `📱 *WhatsApp:* ${formData.whatsapp}\n` +
+      `📧 *E-mail:* ${formData.email || 'Não informado'}\n` +
+      `💰 *Faixa de Orçamento:* ${formData.incomeBracket}\n` +
+      `🎯 *Objetivo:* ${formData.purpose}\n` +
+      `⏳ *Previsão:* ${formData.timeframe}`;
+
+    const encodedMsg = encodeURIComponent(message);
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${VISTAHAVEN_DATA.brand.whatsappPhone}&text=${encodedMsg}`;
+    setSubmittedWhatsappUrl(whatsappUrl);
+
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
@@ -46,21 +59,7 @@ export default function QualificationForm({ onLeadCaptured, isModal = false, onC
         });
       }
 
-      const message = `Olá Eduarda Jackes! Gostaria de atendimento exclusivo para imóveis em Recife - PE.\n\n` +
-        `👤 *Nome:* ${formData.name}\n` +
-        `📱 *WhatsApp:* ${formData.whatsapp}\n` +
-        `📧 *E-mail:* ${formData.email || 'Não informado'}\n` +
-        `💰 *Faixa de Orçamento:* ${formData.incomeBracket}\n` +
-        `🎯 *Objetivo:* ${formData.purpose}\n` +
-        `⏳ *Previsão:* ${formData.timeframe}`;
-
-      const encodedMsg = encodeURIComponent(message);
-      const whatsappUrl = `https://api.whatsapp.com/send?phone=${VISTAHAVEN_DATA.brand.whatsappPhone}&text=${encodedMsg}`;
-      
-      setTimeout(() => {
-        window.open(whatsappUrl, '_blank');
-      }, 1000);
-
+      window.open(whatsappUrl, '_blank');
     }, 600);
   };
 
@@ -81,7 +80,7 @@ export default function QualificationForm({ onLeadCaptured, isModal = false, onC
           </p>
           <div className="pt-4 flex flex-col gap-3">
             <a
-              href={`https://api.whatsapp.com/send?phone=${VISTAHAVEN_DATA.brand.whatsappPhone}`}
+              href={submittedWhatsappUrl || `https://api.whatsapp.com/send?phone=${VISTAHAVEN_DATA.brand.whatsappPhone}`}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-bold py-3.5 px-6 rounded-full transition-all shadow-md shadow-purple-600/20"
@@ -91,6 +90,7 @@ export default function QualificationForm({ onLeadCaptured, isModal = false, onC
             </a>
             {isModal && (
               <button
+                type="button"
                 onClick={onCloseModal}
                 className="text-slate-400 hover:text-slate-600 text-xs py-2 cursor-pointer"
               >
@@ -112,7 +112,12 @@ export default function QualificationForm({ onLeadCaptured, isModal = false, onC
               </h3>
             </div>
             {isModal && (
-              <button onClick={onCloseModal} className="text-slate-400 hover:text-slate-600 p-1 cursor-pointer">
+              <button 
+                type="button" 
+                onClick={onCloseModal} 
+                className="text-slate-400 hover:text-slate-600 p-1 cursor-pointer"
+                aria-label="Fechar"
+              >
                 <X size={20} />
               </button>
             )}

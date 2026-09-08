@@ -71,6 +71,27 @@ export default function App() {
     return () => window.removeEventListener('scroll', checkScroll);
   }, []);
 
+  // Fecha modal com Escape e bloqueia scroll do fundo enquanto o modal estiver aberto
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setIsModalOpen(false);
+      }
+    };
+
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isModalOpen]);
+
   const handleLeadCaptured = (leadData) => {
     setLastCapturedLead(leadData);
 
@@ -93,24 +114,37 @@ export default function App() {
       <StructuredDataSEO />
       
       {/* 1. Header Navigation Bar */}
-      <Header
-        onRequestFormModal={() => {
-          // Redireciona para contato WhatsApp oficial ao invés de abrir modal de formulário
-          window.open(VISTAHAVEN_DATA.brand.whatsapp, '_blank');
-        }}
-      />
+      <Header onRequestFormModal={() => setIsModalOpen(true)} />
 
       {/* 2. Hero Section */}
-      <Hero />
+      <Hero onRequestFormModal={() => setIsModalOpen(true)} />
 
       {/* 3. Who We Are & Metrics Section (Sticky Scroll Reveal) */}
-      <WhoWeAreStickyScroll />
+      <WhoWeAreStickyScroll onRequestFormModal={() => setIsModalOpen(true)} />
 
       {/* 4. Our Solutions Section */}
-      <Solutions />
+      <Solutions onRequestFormModal={() => setIsModalOpen(true)} />
 
       {/* 5. Trusted Locations Grid Section */}
-      <TrustedLocations />
+      <TrustedLocations onRequestFormModal={() => setIsModalOpen(true)} />
+
+      {/* 6. Seção de Formulário de Atendimento & Qualificação */}
+      <section id="contato" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 relative overflow-hidden border-t border-slate-200/80">
+        <div className="max-w-3xl mx-auto space-y-8">
+          <div className="text-center max-w-xl mx-auto space-y-3">
+            <span className="text-xs uppercase font-extrabold tracking-[0.2em] text-purple-600 font-heading">
+              Atendimento Exclusivo
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-heading tracking-tight">
+              Encontre o Imóvel Perfeito em Recife
+            </h2>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              Preencha o formulário abaixo para receber nossa curadoria selecionada com tabela de valores e atendimento direto no WhatsApp com Eduarda Jackes.
+            </p>
+          </div>
+          <QualificationForm onLeadCaptured={handleLeadCaptured} />
+        </div>
+      </section>
 
       {/* Footer com tamanho 25% maior (py-16 sm:py-20) e SocialDock interativo com tooltips */}
       <footer className="bg-slate-950 text-slate-400 py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-900 text-xs relative overflow-hidden">
@@ -198,6 +232,26 @@ export default function App() {
         >
           <ArrowUp size={18} className="group-hover:-translate-y-0.5 transition-transform" />
         </button>
+      )}
+
+      {/* Modal de Qualificação & Atendimento Exclusivo */}
+      {isModalOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-sm overflow-y-auto"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setIsModalOpen(false);
+          }}
+        >
+          <div className="relative w-full max-w-xl my-auto">
+            <QualificationForm
+              isModal={true}
+              onCloseModal={() => setIsModalOpen(false)}
+              onLeadCaptured={handleLeadCaptured}
+            />
+          </div>
+        </div>
       )}
 
     </div>
