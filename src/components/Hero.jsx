@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Zap, ArrowDown, Sparkles, Eye, EyeOff } from 'lucide-react';
+import { ArrowDown, MessageSquare, Calculator, ShieldCheck, CheckCircle2, Award } from 'lucide-react';
 import { VISTAHAVEN_DATA } from '../data/propertyData';
 import { slowScrollTo } from '../utils/scrollUtils';
 import { ElasticGallery } from './ui/elastic-gallery';
 import LogoEduarda from './ui/LogoEduarda';
 import { cn } from '@/lib/utils';
+import matheusFoto from '../img/matheus.jpg';
 
 export default function Hero({ onRequestFormModal }) {
-  const [searchQuery, setSearchQuery] = useState('');
   const [hasInteracted, setHasInteracted] = useState(false);
-  const [manualImmersive, setManualImmersive] = useState(false);
 
   useEffect(() => {
     const handleWindowScroll = () => {
@@ -27,17 +26,14 @@ export default function Hero({ onRequestFormModal }) {
     }
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    onRequestFormModal();
-  };
-
   const handleScrollDown = (e) => {
     e.preventDefault();
     slowScrollTo('#who-we-are', 1100, 75);
   };
 
-  const isVisible = hasInteracted && !manualImmersive;
+  const isVisible = hasInteracted;
+
+  const whatsappHeroUrl = `${VISTAHAVEN_DATA.brand.whatsapp}&text=${encodeURIComponent(VISTAHAVEN_DATA.brand.whatsappSimulationMessage)}`;
 
   return (
     <section
@@ -46,117 +42,175 @@ export default function Hero({ onRequestFormModal }) {
       onTouchStart={handleInteraction}
       onClick={handleInteraction}
       onWheel={handleInteraction}
-      className="relative h-screen min-h-screen flex flex-col justify-between pt-16 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden select-none"
+      className="relative min-h-screen flex flex-col justify-between pt-20 pb-10 px-4 sm:px-6 lg:px-8 overflow-hidden select-none"
     >
       
-      {/* Interactive Elastic Gallery Background - 100% Fullscreen & High Visibility */}
+      {/* Background Interativo com Elastic Gallery */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <ElasticGallery isHeroBackground={true} />
         
-        {/* Very Light & Soft Gradient Overlay only when text is active - No heavy blur */}
+        {/* Overlay preto leve com blur suave para contraste sem tirar as cores naturais das fotos */}
         <div
           className={cn(
             "absolute inset-0 transition-opacity duration-700 pointer-events-none",
             isVisible
-              ? "opacity-100 bg-gradient-to-r from-slate-950/75 via-slate-950/30 to-transparent"
-              : "opacity-100 bg-slate-950/40 backdrop-blur-[1px]"
+              ? "opacity-100 bg-gradient-to-r from-black/80 via-black/45 to-black/70 backdrop-blur-[1px]"
+              : "opacity-100 bg-black/45 backdrop-blur-[0.5px]"
           )}
         />
         
-        {/* Subtle Bottom vignette to blend into page footer/sections */}
-        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
+        {/* Vignette inferior preto suave */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
       </div>
 
-      {/* Tela de Abertura Inicial (Logo + Frase) - Máximo Minimalismo: sem texto 'role ou toque', apenas a logo, a frase e o ícone sutil */}
+      {/* Tela de Abertura Inicial (Impacto em 3 segundos) */}
       <div
         className={cn(
-          "absolute inset-0 z-20 flex flex-col items-center justify-center pointer-events-none transition-all duration-700 ease-out px-4",
+          "absolute inset-0 z-20 flex flex-col items-center justify-center transition-all duration-700 ease-out px-4",
           !isVisible
             ? "opacity-100 scale-100 translate-y-0"
             : "opacity-0 scale-95 -translate-y-6 pointer-events-none"
         )}
       >
-        <div className="flex flex-col items-center text-center space-y-6 max-w-3xl">
-          {/* Logo Oficial de Eduarda Jackes (subtítulo nas cores padrão da página) */}
+        <div className="flex flex-col items-center text-center space-y-6 max-w-4xl">
+          
+          {/* Avatar / Foto Real do Matheus Ferreira */}
+          <div className="relative group">
+            <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-full p-1 bg-gradient-to-tr from-[#C79C3F] via-[#122C58] to-[#6FC34B] shadow-2xl shadow-black/60">
+              <img
+                src={matheusFoto}
+                alt="Matheus Ferreira - Corretor de Imóveis CRECI 20367"
+                className="w-full h-full object-cover rounded-full object-top shadow-inner"
+              />
+            </div>
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-[#C79C3F] text-[#0B1C38] font-black text-[10px] sm:text-[11px] px-3 py-0.5 rounded-full shadow-lg whitespace-nowrap uppercase tracking-wider flex items-center gap-1 border border-white/40">
+              <CheckCircle2 size={12} /> CRECI 20367
+            </div>
+          </div>
+
+          {/* Logo e Nome Oficial */}
           <div className="transform transition-transform duration-700 hover:scale-105">
             <LogoEduarda
               variant="light"
-              subtitleColor="brand"
-              className="scale-110 sm:scale-125 md:scale-140 drop-shadow-2xl mb-2"
+              className="drop-shadow-2xl"
             />
           </div>
 
-          {/* Frase nas cores padrão da página */}
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white font-heading tracking-tight leading-tight drop-shadow-2xl">
-            Consultoria especialista{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-300">
-              em imóveis de alto padrão
+          {/* Título Principal de Alto Impacto do PRD */}
+          <div className="space-y-3">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#122C58]/90 border border-[#C79C3F]/60 text-xs uppercase font-extrabold tracking-wider text-[#C79C3F] shadow-xl">
+              {VISTAHAVEN_DATA.hero.badge}
             </span>
-          </h2>
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-white font-heading tracking-tight leading-tight drop-shadow-2xl">
+              Realize o Sonho da Sua{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C79C3F] via-[#e5b95c] to-[#C79C3F]">
+                Casa Própria
+              </span>{' '}
+              na Grande Recife com Segurança.
+            </h1>
+            <p className="text-slate-200 text-xs sm:text-base max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-md">
+              {VISTAHAVEN_DATA.hero.subtext}
+            </p>
+          </div>
 
-          {/* Apenas o ícone flutuante sutil (máximo minimalismo) */}
-          <div className="pt-6">
-            <div className="w-10 h-10 rounded-full bg-slate-950/60 backdrop-blur-md border border-purple-500/30 flex items-center justify-center shadow-lg shadow-purple-500/10 animate-bounceSlow">
-              <ArrowDown size={16} className="text-purple-300" />
+          {/* CTAs de Conversão Imediata (Botão Dourado de Destaque) */}
+          <div className="pt-2 flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto">
+            <button
+              onClick={onRequestFormModal}
+              className="w-full sm:w-auto bg-[#C79C3F] hover:bg-[#B58B32] text-white font-extrabold text-sm sm:text-base px-8 py-4 rounded-full transition-all shadow-xl shadow-[#C79C3F]/30 active:scale-95 hover:scale-105 cursor-pointer flex items-center justify-center gap-2.5 animate-pulseGold"
+            >
+              <Calculator size={18} />
+              <span>Quero Simular Meu Financiamento</span>
+            </button>
+
+            <a
+              href={whatsappHeroUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base px-6 py-4 rounded-full transition-all shadow-lg active:scale-95 flex items-center justify-center gap-2 border border-emerald-400/40"
+            >
+              <MessageSquare size={18} />
+              <span>Falar no WhatsApp</span>
+            </a>
+          </div>
+
+          {/* Indicador sutil para rolar */}
+          <div className="pt-4">
+            <div className="w-10 h-10 rounded-full bg-[#0B1C38]/80 border border-[#C79C3F]/40 flex items-center justify-center shadow-lg shadow-black/40 animate-bounceSlow cursor-pointer" onClick={handleScrollDown}>
+              <ArrowDown size={16} className="text-[#C79C3F]" />
             </div>
           </div>
+
         </div>
       </div>
 
-      {/* Top Bar Floating Control (Permite alternar para modo imersivo a qualquer momento) */}
-      <div className="relative z-20 max-w-7xl w-full mx-auto flex justify-end">
-        {hasInteracted && (
-          <button
-            onClick={() => setManualImmersive(!manualImmersive)}
-            className="hidden sm:flex bg-slate-950/70 hover:bg-slate-900 border border-white/20 hover:border-purple-400/60 text-white text-[11px] font-bold px-3.5 py-1.5 rounded-full backdrop-blur-md items-center gap-1.5 transition-all duration-300 shadow-xl cursor-pointer active:scale-95"
-            title={manualImmersive ? "Ver textos" : "Ocultar textos para ver as fotos"}
-          >
-            {manualImmersive ? <Eye size={13} className="text-purple-400" /> : <EyeOff size={13} className="text-slate-400" />}
-            <span>{manualImmersive ? "Ver Detalhes" : "Modo Fotos"}</span>
-          </button>
-        )}
-      </div>
-
-      {/* Hero Content Container (Aparece suavemente após interação) - 100% Minimalista: sem pesquisa e sem cards flutuantes */}
+      {/* Hero Content Container (Aparece suavemente após rolagem/interação) */}
       <div
         className={cn(
           "relative z-10 max-w-5xl w-full mx-auto my-auto flex flex-col items-center text-center py-6 transition-all duration-700 ease-out",
           isVisible
-            ? "opacity-100 translate-y-0 pointer-events-none"
+            ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 translate-y-8 pointer-events-none select-none"
         )}
       >
-        <div className={cn(
-          "space-y-3.5 sm:space-y-6 max-w-3xl px-4 py-6 sm:p-0 rounded-3xl sm:rounded-none bg-slate-950/45 sm:bg-transparent backdrop-blur-[2px] sm:backdrop-blur-none border border-white/10 sm:border-none shadow-2xl sm:shadow-none",
-          isVisible ? "pointer-events-auto" : "pointer-events-none"
-        )}>
-          {/* Eyebrow Label com Borda Branca & Fundo de Alto Contraste */}
+        <div className="space-y-4 sm:space-y-6 max-w-3xl px-4 py-6 sm:p-0 rounded-3xl sm:rounded-none bg-black/40 sm:bg-transparent backdrop-blur-[2px] sm:backdrop-blur-none border border-white/10 sm:border-none shadow-2xl sm:shadow-none">
+          
+          {/* Eyebrow Label com Borda Dourada */}
           <div className="flex justify-center">
-            <span className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full border border-white/90 bg-slate-950/85 backdrop-blur-md text-[10px] sm:text-xs uppercase font-black tracking-[0.2em] sm:tracking-[0.22em] text-purple-300 font-heading shadow-2xl drop-shadow-md">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#C79C3F]/80 bg-[#122C58]/90 backdrop-blur-md text-[10px] sm:text-xs uppercase font-extrabold tracking-[0.2em] text-[#C79C3F] font-heading shadow-2xl">
               {VISTAHAVEN_DATA.hero.badge}
             </span>
           </div>
 
-          {/* Main Display Headline com Alto Contraste para Mobile */}
-          <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.15] sm:leading-[1.1] font-heading drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
-            {VISTAHAVEN_DATA.hero.headlineLine1}{' '}
-            <br />
-            que{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-purple-200 to-indigo-200 drop-shadow-md">
-              {VISTAHAVEN_DATA.hero.headlineHighlight}
-            </span>
-            <br />
-            {VISTAHAVEN_DATA.hero.headlineLine2}
+          {/* Main Headline */}
+          <h1 className="text-2xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-[1.15] sm:leading-[1.1] font-heading drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
+            Realize o Sonho da Sua{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C79C3F] via-[#f3cb70] to-[#C79C3F]">
+              Casa Própria
+            </span>{' '}
+            na Grande Recife
           </h1>
 
-          {/* Subtitle Paragraph com Legibilidade Otimizada */}
-          <p className="text-slate-100 text-xs sm:text-base max-w-xl mx-auto leading-relaxed sm:leading-relaxed font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] px-2">
+          {/* Subtitle */}
+          <p className="text-slate-200 text-xs sm:text-base max-w-xl mx-auto leading-relaxed font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] px-2">
             {VISTAHAVEN_DATA.hero.subtext}
           </p>
+
+          {/* CTAs de Conversão Dourado & WhatsApp */}
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+            <button
+              onClick={onRequestFormModal}
+              className="w-full sm:w-auto bg-[#C79C3F] hover:bg-[#B58B32] text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-full transition-all shadow-xl shadow-[#C79C3F]/30 active:scale-95 hover:scale-105 cursor-pointer flex items-center justify-center gap-2.5"
+            >
+              <Calculator size={18} />
+              <span>Simular Meu Financiamento</span>
+            </button>
+
+            <a
+              href={whatsappHeroUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-full transition-all shadow-lg active:scale-95 flex items-center justify-center gap-2"
+            >
+              <MessageSquare size={18} />
+              <span>Falar no WhatsApp</span>
+            </a>
+          </div>
+
+          {/* Badges de Autoridade */}
+          <div className="pt-4 flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-slate-300">
+            <span className="flex items-center gap-1.5 bg-[#122C58]/80 px-3 py-1 rounded-full border border-white/10">
+              <ShieldCheck size={14} className="text-[#6FC34B]" /> Correspondente Caixa Homologado
+            </span>
+            <span className="flex items-center gap-1.5 bg-[#122C58]/80 px-3 py-1 rounded-full border border-white/10">
+              <Award size={14} className="text-[#C79C3F]" /> Parceria Oficial RM Home
+            </span>
+          </div>
+
         </div>
       </div>
 
-      {/* Bottom Scroll Indicator - Apenas o ícone flutuante sutil minimalista */}
+      {/* Bottom Scroll Indicator */}
       <div
         className={cn(
           "relative z-10 max-w-7xl w-full mx-auto flex justify-center pb-2 transition-all duration-700",
@@ -165,15 +219,13 @@ export default function Hero({ onRequestFormModal }) {
       >
         <div
           onClick={handleScrollDown}
-          className="w-9 h-9 rounded-full bg-slate-900/80 hover:bg-purple-600 border border-purple-400/30 flex items-center justify-center text-white cursor-pointer transition-all hover:scale-110 shadow-lg animate-bounceSlow"
+          className="w-9 h-9 rounded-full bg-[#122C58]/90 hover:bg-[#C79C3F] border border-[#C79C3F]/40 flex items-center justify-center text-white cursor-pointer transition-all hover:scale-110 shadow-lg animate-bounceSlow"
           title="Rolar para baixo"
         >
-          <ArrowDown size={14} className="text-purple-200" />
+          <ArrowDown size={14} className="text-[#C79C3F] hover:text-white" />
         </div>
       </div>
 
     </section>
   );
 }
-
-

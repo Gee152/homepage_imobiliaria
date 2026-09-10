@@ -22,8 +22,8 @@ export default function FloatingWhatsApp() {
     };
   }, []);
 
-  const defaultMessage = "Olá Eduarda Jackes! Gostaria de atendimento exclusivo sobre os imóveis em Recife - PE.";
-  const whatsappUrl = `https://api.whatsapp.com/send?phone=${VISTAHAVEN_DATA.brand.whatsappPhone}&text=${encodeURIComponent(defaultMessage)}`;
+  const defaultMessage = VISTAHAVEN_DATA.brand.whatsappSimulationMessage || "Olá Matheus, vim pelo site e quero simular o financiamento da minha casa própria.";
+  const whatsappUrl = `${VISTAHAVEN_DATA.brand.whatsapp}&text=${encodeURIComponent(defaultMessage)}`;
 
   const handleClick = () => {
     if (window.fbq) {
@@ -32,7 +32,7 @@ export default function FloatingWhatsApp() {
     if (window.gtag) {
       window.gtag('event', 'whatsapp_floating_click', {
         event_category: 'contact',
-        event_label: 'Eduarda Jackes'
+        event_label: 'Matheus Ferreira'
       });
     }
   };
@@ -46,7 +46,7 @@ export default function FloatingWhatsApp() {
     >
       {/* Balão de Dica / Speech Bubble (Desktop) */}
       <div
-        className={`hidden sm:flex items-center gap-2.5 bg-slate-950/90 text-white pl-3.5 pr-2 py-2 rounded-2xl shadow-2xl border border-emerald-500/30 backdrop-blur-md transition-all duration-300 select-none ${
+        className={`hidden sm:flex items-center gap-2.5 bg-[#0B1C38]/95 text-white pl-3.5 pr-2 py-2 rounded-2xl shadow-2xl border border-[#C79C3F]/40 backdrop-blur-md transition-all duration-300 select-none ${
           showTooltip ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-3 pointer-events-none'
         }`}
       >
@@ -57,12 +57,12 @@ export default function FloatingWhatsApp() {
           onClick={handleClick}
           className="flex flex-col text-left group"
         >
-          <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            Online Agora
+          <span className="text-[10px] text-[#6FC34B] font-extrabold uppercase tracking-wider flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#6FC34B] animate-pulse"></span>
+            Online Agora • CRECI 20367
           </span>
-          <span className="text-xs font-semibold text-slate-100 group-hover:text-emerald-300 transition-colors">
-            Falar com Eduarda Jackes
+          <span className="text-xs font-bold text-slate-100 group-hover:text-[#C79C3F] transition-colors">
+            Falar com Matheus Ferreira
           </span>
         </a>
         <button
@@ -76,23 +76,23 @@ export default function FloatingWhatsApp() {
         </button>
       </div>
 
-      {/* Botão Flutuante do WhatsApp (Mobile & Desktop) */}
+      {/* Botão Flutuante do WhatsApp */}
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
         onClick={handleClick}
-        aria-label="Falar com Eduarda Jackes no WhatsApp"
-        title="Falar no WhatsApp"
-        className="relative group flex items-center justify-center w-14 h-14 sm:w-15 sm:h-15 rounded-full bg-gradient-to-tr from-[#128C7E] via-[#25D366] to-[#25D366] text-white shadow-2xl shadow-emerald-600/40 hover:shadow-emerald-500/70 hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer border border-white/30"
+        aria-label="Falar com Matheus Ferreira no WhatsApp"
+        title="Falar com Matheus Ferreira"
+        className="relative group flex items-center justify-center w-14 h-14 sm:w-15 sm:h-15 rounded-full bg-gradient-to-tr from-[#128C7E] via-[#25D366] to-[#25D366] text-white shadow-2xl shadow-emerald-950/40 hover:shadow-emerald-500/50 hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer border border-white/30"
       >
-        {/* Efeito Radar / Onda Pulsante */}
+        {/* Efeito Radar */}
         <span className="absolute inset-0 rounded-full bg-emerald-500/40 animate-ping pointer-events-none"></span>
 
         {/* Indicador de Status Online */}
         <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-emerald-400 border-2 border-white rounded-full shadow-sm"></span>
 
-        {/* Ícone Oficial WhatsApp em SVG */}
+        {/* Ícone Oficial WhatsApp */}
         <svg
           viewBox="0 0 24 24"
           width="30"
