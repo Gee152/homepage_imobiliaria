@@ -11,49 +11,61 @@ import {
   ExternalLink,
   ChevronRight,
   Sparkles,
-  MapPin
+  MapPin,
+  Banknote,
+  CheckCircle2
 } from "lucide-react";
-import eduardaFoto from "../img/eduarda.jpg";
+import matheusFoto from "../img/matheus.jpg";
 import { VISTAHAVEN_DATA } from "../data/propertyData";
 import LogoEduarda from "./ui/LogoEduarda";
 
 export default function BioLinks() {
   const { brand } = VISTAHAVEN_DATA;
-  // Inicialmente nenhum ativo/expandido (ou o que estiver sob hover)
   const [activeId, setActiveId] = useState(null);
 
-  // Canais com cores autênticas e de alto padrão alinhadas ao nicho imobiliário de luxo
   const links = [
     {
       id: "whatsapp",
-      name: "WhatsApp",
-      actionText: "Conversar no WhatsApp",
-      destUrl: "api.whatsapp.com/send?phone=...",
+      name: "Simulação MCMV",
+      actionText: "Simular Financiamento no WhatsApp",
+      destUrl: "Atendimento imediato com Matheus",
       badge: "Mais Rápido",
       icon: MessageCircle,
-      href: brand.whatsapp,
-      gradient: "from-[#00c6ff] to-[#0072ff]",
-      borderGlow: "border-sky-400/50 shadow-sky-500/40",
-      activeTabColor: "bg-[#0088ff]"
+      href: `${brand.whatsapp}&text=${encodeURIComponent(brand.whatsappSimulationMessage)}`,
+      gradient: "from-[#122C58] to-[#0B1C38]",
+      borderGlow: "border-[#C79C3F]/50 shadow-[#C79C3F]/30",
+      activeTabColor: "bg-[#C79C3F]"
+    },
+    {
+      id: "indicou-ganhou",
+      name: "Indicou Ganhou R$ 500",
+      actionText: "Indique um Amigo e Ganhe R$ 500 no Pix",
+      destUrl: "Programa de Indicação Oficial",
+      badge: "R$ 500 no Pix",
+      icon: Banknote,
+      href: `${brand.whatsapp}&text=${encodeURIComponent(brand.whatsappReferralMessage)}`,
+      gradient: "from-[#6FC34B] to-[#16a34a]",
+      borderGlow: "border-[#6FC34B]/60 shadow-[#6FC34B]/40",
+      activeTabColor: "bg-[#6FC34B]"
     },
     {
       id: "website",
-      name: "Catálogo Imóveis",
-      actionText: "Ver Portfólio de Alto Padrão",
-      destUrl: "eduardajackes.com.br",
-      badge: "Tour Virtual",
+      name: "Catálogo de Imóveis",
+      actionText: "Ver Imóveis em Jaboatão, Paulista e Recife",
+      destUrl: "matheusferreira.com.br",
+      badge: "MCMV",
       icon: Building2,
       href: window.location.pathname,
-      gradient: "from-[#8a2be2] to-[#4a00e0]",
-      borderGlow: "border-purple-400/50 shadow-purple-500/40",
-      activeTabColor: "bg-[#6a00f4]"
+      gradient: "from-[#122C58] to-[#1E3A8A]",
+      borderGlow: "border-[#122C58]/60 shadow-[#122C58]/40",
+      activeTabColor: "bg-[#122C58]"
     },
     {
       id: "instagram",
-      name: "Instagram",
-      actionText: "Acompanhar no Instagram",
-      destUrl: "@eduardajackesimoveis",
-      badge: "Vídeos & Fotos",
+      name: "Instagram Matheus",
+      actionText: "Acompanhar @matheusferreira.corretor",
+      destUrl: "@matheusferreira.corretor",
+      badge: "Dicas & Imóveis",
       icon: Instagram,
       href: brand.instagram,
       gradient: "from-[#f09433] via-[#e6683c] to-[#bc1888]",
@@ -61,25 +73,25 @@ export default function BioLinks() {
       activeTabColor: "bg-[#e1306c]"
     },
     {
-      id: "schedule",
-      name: "Agendar Visita",
-      actionText: "Marcar Visita VIP aos Imóveis",
-      destUrl: "Consultoria presencial em Recife",
-      badge: "Exclusivo",
-      icon: CalendarCheck,
-      href: `${brand.whatsapp}?text=${encodeURIComponent("Olá Eduarda! Gostaria de agendar uma visita presencial para conhecer imóveis de alto padrão.")}`,
-      gradient: "from-[#2193b0] to-[#6dd5ed]",
-      borderGlow: "border-cyan-400/50 shadow-cyan-500/40",
-      activeTabColor: "bg-[#2193b0]"
+      id: "rmhome",
+      name: "RM Home Imobiliária",
+      actionText: "Instagram da Imobiliária Parceira",
+      destUrl: "@rmhomeimobiliaria",
+      badge: "Parceira Oficial",
+      icon: Building2,
+      href: brand.instagramPartner,
+      gradient: "from-[#0B1C38] to-[#122C58]",
+      borderGlow: "border-[#C79C3F]/40 shadow-slate-900/40",
+      activeTabColor: "bg-[#C79C3F]"
     },
     {
       id: "phone",
-      name: "Telefone",
-      actionText: "Falar por Ligação Direta",
+      name: "Telefone Direto",
+      actionText: "Ligar para Matheus Ferreira",
       destUrl: "(81) 99999-9999",
-      badge: "Voz",
+      badge: "Ligação",
       icon: Phone,
-      href: "tel:+5581999999999",
+      href: `tel:+${brand.whatsappPhone}`,
       gradient: "from-[#00b09b] to-[#96c93d]",
       borderGlow: "border-emerald-400/50 shadow-emerald-500/40",
       activeTabColor: "bg-[#00a884]"
@@ -90,12 +102,12 @@ export default function BioLinks() {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: "Eduarda Jackes - Consultoria Imobiliária",
-          text: "Acesse os canais de atendimento e imóveis de alto padrão da Eduarda Jackes",
+          title: "Matheus Ferreira - Corretor de Imóveis (CRECI 20367)",
+          text: "Realize o sonho da sua casa própria na Grande Recife com o Matheus Ferreira.",
           url: window.location.href,
         });
       } catch (err) {
-        console.log("Cancelado", err);
+        console.log("Compartilhamento cancelado", err);
       }
     } else {
       navigator.clipboard.writeText(window.location.href);
@@ -104,164 +116,95 @@ export default function BioLinks() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-between px-4 py-8 sm:py-12 relative overflow-hidden selection:bg-purple-600 selection:text-white font-sans">
-      {/* Luzes de Fundo e Glows Dinâmicos */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[36rem] h-[36rem] bg-purple-600/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-80 h-80 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
+    <div className="min-h-screen bg-gradient-to-b from-[#0B1C38] via-[#122C58] to-[#0B1C38] text-white flex flex-col items-center justify-between py-10 px-4 sm:px-6 relative overflow-x-hidden">
       
-      {/* Botão sutil de Compartilhar no Topo Direito */}
-      <div className="w-full max-w-md flex justify-end mb-2 relative z-20">
+      {/* Botão de Compartilhar no Topo */}
+      <div className="w-full max-w-md flex justify-end pb-4">
         <button
           onClick={handleShare}
-          className="p-2.5 rounded-full bg-slate-900/80 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer shadow-lg active:scale-95"
+          className="p-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-md transition-all cursor-pointer shadow-md"
           title="Compartilhar Perfil"
-          aria-label="Compartilhar"
         >
-          <Share2 size={18} />
+          <Share2 size={18} className="text-white" />
         </button>
       </div>
 
-      {/* Conteúdo Central */}
-      <main className="w-full max-w-md flex flex-col items-center relative z-10">
+      <div className="w-full max-w-md flex flex-col items-center text-center space-y-6">
         
-        {/* Avatar Ampliado com Borda Gradiente e Glow de Alta Presença */}
-        <motion.div 
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5, type: "spring" }}
-          className="relative mb-6"
-        >
-          <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-full p-[3.5px] bg-gradient-to-tr from-purple-500 via-purple-300 to-indigo-500 shadow-2xl shadow-purple-900/50">
-            <div className="w-full h-full rounded-full overflow-hidden bg-slate-900">
-              <img
-                src={eduardaFoto}
-                alt="Eduarda Jackes"
-                className="w-full h-full object-cover object-[center_15%]"
-              />
-            </div>
+        {/* Foto Profissional do Matheus */}
+        <div className="relative">
+          <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 bg-gradient-to-tr from-[#C79C3F] via-white to-[#6FC34B] shadow-2xl">
+            <img
+              src={matheusFoto}
+              alt="Matheus Ferreira - Corretor de Imóveis"
+              className="w-full h-full object-cover rounded-full object-top shadow-inner"
+            />
           </div>
-          {/* Badge de Verificado */}
-          <div 
-            className="absolute bottom-1 right-2 bg-purple-600 text-white p-2 rounded-full shadow-xl border-[2.5px] border-slate-950" 
-            title="Perfil Verificado"
-          >
-            <ShieldCheck size={18} />
-          </div>
-        </motion.div>
-
-        {/* Logo Eduarda Jackes */}
-        <motion.div
-          initial={{ y: 15, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.15, duration: 0.5 }}
-          className="text-center mb-3"
-        >
-          <LogoEduarda variant="light" />
-        </motion.div>
-
-        {/* Tagline e Credencial CRECI */}
-        <motion.div
-          initial={{ y: 15, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.25, duration: 0.5 }}
-          className="flex flex-col items-center gap-2 mb-8 text-center"
-        >
-          <span className="inline-flex items-center gap-1.5 text-purple-300 font-semibold bg-purple-950/60 px-3.5 py-1 rounded-full border border-purple-500/30 text-xs shadow-sm">
-            <ShieldCheck size={13} className="text-purple-400" />
-            {brand.creci}
+          <span className="absolute bottom-0 right-0 w-6 h-6 bg-[#6FC34B] border-2 border-[#0B1C38] rounded-full flex items-center justify-center text-[10px] font-bold text-[#0B1C38]">
+            ✓
           </span>
-          <p className="text-xs text-slate-400 max-w-xs leading-relaxed">
-            Especialista em imóveis de médio e alto padrão em Recife - PE. Venda, locação e curadoria imobiliária exclusiva.
-          </p>
-        </motion.div>
+        </div>
 
-        {/* Lista de Abas Estilo Gaveta com ajuste de centralização (+5% em direção ao centro) */}
-        <div 
-          className="w-full flex flex-col items-start space-y-3 pt-2 pl-[10%]"
-          onMouseLeave={() => setActiveId(null)}
-        >
+        {/* Título e Cargo */}
+        <div className="space-y-1.5">
+          <h1 className="text-2xl font-black font-heading tracking-tight text-white flex items-center justify-center gap-2">
+            Matheus Ferreira
+          </h1>
+          <p className="text-xs font-bold uppercase tracking-widest text-[#C79C3F]">
+            CRECI 20367 • RM Home Imobiliária
+          </p>
+          <p className="text-xs text-slate-300 max-w-xs mx-auto leading-relaxed pt-1">
+            Especialista em Minha Casa Minha Vida e crédito habitacional Caixa na Grande Recife.
+          </p>
+        </div>
+
+        {/* Lista de Botões de Link */}
+        <div className="w-full space-y-3.5 pt-2">
           {links.map((link) => {
             const Icon = link.icon;
-            const isHovered = activeId === link.id;
-
             return (
-              <div 
+              <a
                 key={link.id}
-                className="w-full flex items-center select-none"
-                onMouseEnter={() => setActiveId(link.id)}
-                onClick={() => setActiveId(link.id)}
+                href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : "_self"}
+                rel="noreferrer"
+                className={`w-full bg-[#0B1C38]/90 hover:bg-[#122C58] border border-white/10 hover:border-[#C79C3F]/50 p-4 rounded-2xl flex items-center justify-between transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] group cursor-pointer ${link.borderGlow}`}
               >
-                <a
-                  href={link.href}
-                  target={link.id === "website" ? "_self" : "_blank"}
-                  rel="noreferrer"
-                  className="inline-block focus:outline-none"
-                >
-                  <motion.div
-                    animate={{
-                      width: isHovered ? "min(100vw - 48px, 360px)" : "min(100vw - 60px, 320px)",
-                    }}
-                    transition={{ type: "spring", stiffness: 420, damping: 28 }}
-                    className={`h-15 flex items-center justify-between cursor-pointer rounded-r-3xl rounded-l-none relative overflow-hidden transition-all duration-300 ${
-                      isHovered
-                        ? `bg-gradient-to-r ${link.gradient} text-white border-y border-r border-white/40 shadow-2xl ${link.borderGlow}`
-                        : "bg-slate-900/40 backdrop-blur-md text-slate-400 border-y border-r border-white/10 shadow-lg"
-                    }`}
-                  >
-                    {/* Bloco de Texto (Título e Subtítulo) */}
-                    <div className="flex flex-col pl-5 pr-2 min-w-0 flex-1 overflow-hidden text-left">
-                      <span className={`text-base sm:text-[1.05rem] font-black tracking-tight truncate transition-all duration-200 ${
-                        isHovered 
-                          ? "text-white font-extrabold drop-shadow-sm" 
-                          : "text-slate-400/50 font-bold"
-                      }`}>
+                <div className="flex items-center gap-3.5 text-left">
+                  <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
+                    <Icon size={20} className={link.id === "indicou-ganhou" ? "text-[#6FC34B]" : "text-[#C79C3F]"} />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-extrabold text-white group-hover:text-[#C79C3F] transition-colors">
                         {link.name}
                       </span>
-                      
-                      {/* Subtítulo só ganha visibilidade no hover */}
-                      <span className={`text-[11px] font-medium leading-tight truncate transition-all duration-300 ${
-                        isHovered 
-                          ? "text-white/95 opacity-100 max-h-5 mt-0.5 block" 
-                          : "text-transparent opacity-0 max-h-0 hidden"
-                      }`}>
-                        {link.actionText}
-                      </span>
+                      {link.badge && (
+                        <span className="text-[9px] font-bold bg-[#C79C3F]/20 text-[#C79C3F] px-2 py-0.5 rounded-full uppercase tracking-wider border border-[#C79C3F]/30">
+                          {link.badge}
+                        </span>
+                      )}
                     </div>
+                    <span className="text-xs text-slate-300 block leading-tight">
+                      {link.actionText}
+                    </span>
+                  </div>
+                </div>
 
-                    {/* Ícone e Botão de Ação */}
-                    <div className="flex items-center gap-2 pr-3.5 shrink-0">
-                      {/* Cápsula do Ícone: translúcida suave no inativo, e com fundo arredondado branco/25 no hover */}
-                      <div 
-                        className={`w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-300 ${
-                          isHovered 
-                            ? "bg-white/25 text-white scale-105 shadow-inner" 
-                            : "bg-white/5 text-slate-400/60 border border-white/5"
-                        }`}
-                      >
-                        <Icon size={20} className="drop-shadow-sm" />
-                      </div>
-
-                      {/* Botão de redirecionamento externo idêntico ao Print 1 */}
-                      <div className={`transition-all duration-300 ${
-                        isHovered ? "w-8 opacity-100 scale-100" : "w-0 opacity-0 scale-50 overflow-hidden"
-                      }`}>
-                        <div className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center shrink-0 transition-colors">
-                          <ExternalLink size={13} className="text-white" />
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                </a>
-              </div>
+                <ChevronRight size={18} className="text-slate-400 group-hover:text-white group-hover:translate-x-1 transition-all" />
+              </a>
             );
           })}
         </div>
-      </main>
 
-      {/* Footer Minimalista */}
-      <footer className="w-full max-w-md text-center pt-10 text-[11px] text-slate-500 relative z-10">
-        <p>© {new Date().getFullYear()} Eduarda Jackes Consultoria Imobiliária • Todos os direitos reservados</p>
+      </div>
+
+      {/* Footer do BioLinks */}
+      <footer className="w-full max-w-md text-center pt-8 text-[11px] text-slate-400 space-y-2">
+        <p>© {new Date().getFullYear()} Matheus Ferreira • CRECI 20367</p>
+        <p className="text-[10px] text-slate-500">Parceria Oficial RM Home Imobiliária • Juntos Realizamos Sonhos</p>
       </footer>
+
     </div>
   );
 }

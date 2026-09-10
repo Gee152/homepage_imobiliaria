@@ -2,44 +2,44 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Instagram, 
-  Linkedin, 
   MessageCircle, 
   Phone,
-  Mail,
-  Globe
+  Globe,
+  Building2
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { VISTAHAVEN_DATA } from "@/data/propertyData";
 
 const DEFAULT_SOCIALS = [
   {
-    name: "Instagram",
+    name: "Instagram Matheus",
     icon: Instagram,
-    href: "https://www.instagram.com/eduardajackesimoveis/",
-    label: "@eduardajackesimoveis"
+    href: VISTAHAVEN_DATA.brand.instagram,
+    label: "@matheusferreira.corretor"
+  },
+  {
+    name: "RM Home Imobiliária",
+    icon: Building2,
+    href: VISTAHAVEN_DATA.brand.instagramPartner,
+    label: "@rmhomeimobiliaria"
   },
   {
     name: "WhatsApp",
     icon: MessageCircle,
-    href: "https://api.whatsapp.com/send?phone=5581999999999",
-    label: "Conversar no WhatsApp"
-  },
-  {
-    name: "LinkedIn",
-    icon: Linkedin,
-    href: "https://linkedin.com",
-    label: "Eduarda Jackes"
+    href: `${VISTAHAVEN_DATA.brand.whatsapp}&text=${encodeURIComponent(VISTAHAVEN_DATA.brand.whatsappSimulationMessage)}`,
+    label: "Falar no WhatsApp"
   },
   {
     name: "Telefone",
     icon: Phone,
-    href: "tel:+5581999999999",
-    label: "(81) 99999-9999"
+    href: `tel:+${VISTAHAVEN_DATA.brand.whatsappPhone}`,
+    label: "Atendimento Direto"
   },
   {
     name: "Website",
     icon: Globe,
     href: "#home",
-    label: "eduardajackes.com.br"
+    label: "matheusferreira.com.br"
   }
 ];
 
@@ -49,7 +49,7 @@ export default function SocialDock({ items = DEFAULT_SOCIALS, className = "" }) 
   return (
     <div
       className={cn(
-        "inline-flex items-center gap-1.5 p-1.5 sm:p-2 rounded-2xl bg-slate-900/80 border border-slate-800/80 shadow-2xl backdrop-blur-md relative",
+        "inline-flex items-center gap-1.5 p-1.5 sm:p-2 rounded-2xl bg-[#0B1C38]/90 border border-[#122C58] shadow-2xl backdrop-blur-md relative",
         className
       )}
     >
@@ -64,7 +64,7 @@ export default function SocialDock({ items = DEFAULT_SOCIALS, className = "" }) 
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            {/* Tooltip com a seta estilo Speech Bubble (exatamente como no print) */}
+            {/* Tooltip com Speech Bubble */}
             <AnimatePresence>
               {isHovered && (
                 <motion.div
@@ -74,16 +74,15 @@ export default function SocialDock({ items = DEFAULT_SOCIALS, className = "" }) 
                   transition={{ type: "spring", stiffness: 400, damping: 25 }}
                   className="absolute -top-11 left-1/2 -translate-x-1/2 z-30 pointer-events-none flex flex-col items-center"
                 >
-                  <div className="bg-white text-slate-950 text-[11px] font-bold px-3 py-1 rounded-xl shadow-xl whitespace-nowrap leading-none flex items-center justify-center">
+                  <div className="bg-[#C79C3F] text-[#0B1C38] text-[11px] font-extrabold px-3 py-1 rounded-xl shadow-xl whitespace-nowrap leading-none flex items-center justify-center">
                     {item.name}
                   </div>
-                  {/* Pequena setinha apontando para baixo */}
-                  <div className="w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-white -mt-[1px]" />
+                  <div className="w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-[#C79C3F] -mt-[1px]" />
                 </motion.div>
               )}
             </AnimatePresence>
 
-            {/* Ícone com cápsula interativa no hover e tracinho inferior */}
+            {/* Ícone com cápsula interativa no hover */}
             <a
               href={item.href}
               target={item.href.startsWith("http") ? "_blank" : "_self"}
@@ -91,18 +90,17 @@ export default function SocialDock({ items = DEFAULT_SOCIALS, className = "" }) 
               className={cn(
                 "relative flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-200 group cursor-pointer",
                 isHovered
-                  ? "bg-slate-800/90 text-white shadow-inner"
-                  : "text-slate-400 hover:text-white"
+                  ? "bg-[#122C58] text-[#C79C3F] shadow-inner"
+                  : "text-slate-300 hover:text-white"
               )}
               aria-label={item.name}
             >
               <Icon size={18} className="transition-transform duration-200 group-hover:scale-110" />
 
-              {/* Indicador sutil de traço inferior ativo quando em hover */}
               {isHovered && (
                 <motion.span
                   layoutId="activeUnderline"
-                  className="absolute bottom-1 w-3.5 h-[2.5px] bg-white rounded-full"
+                  className="absolute bottom-1 w-3.5 h-[2.5px] bg-[#C79C3F] rounded-full"
                   transition={{ type: "spring", bounce: 0.2, duration: 0.4 }}
                 />
               )}
