@@ -24,29 +24,29 @@ export default function FinancingSimulator({ property, onRequestFormModal }) {
   const estimatedMonthlyPmt = Math.round(amortization + initialInterest);
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 border-t border-slate-800 relative overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#101C30] border-t border-white/10 relative overflow-hidden">
       
       {/* Background Accent Gradients */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#F28C0F]/10 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto space-y-12 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#F28C0F]/10 text-[#F28C0F] border border-[#F28C0F]/30">
             <Calculator size={14} /> Simulador de Financiamento On-line
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-100 font-heading">
-            Consultória especialista <span className="text-emerald-400">em imóveis de alto padrão</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white font-heading">
+            Consultoria especialista <span className="text-[#F28C0F]">em imóveis de alto padrão</span>
           </h2>
-          <p className="text-slate-400 text-sm max-w-xl mx-auto leading-relaxed">
+          <p className="text-slate-300 text-sm max-w-xl mx-auto leading-relaxed">
             Elimine as dúvidas financeiras. Ajuste os valores abaixo para simular as melhores condições com a taxa do {property.financingInfo.type}.
           </p>
         </div>
 
         {/* Interactive Calculator Card */}
-        <div className="bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="bg-[#0A1220] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           {/* Controls Column */}
           <div className="lg:col-span-7 space-y-8">
@@ -55,7 +55,7 @@ export default function FinancingSimulator({ property, onRequestFormModal }) {
             <div className="space-y-3">
               <div className="flex justify-between items-center text-sm font-semibold">
                 <span className="text-slate-300">Valor Estimado do Imóvel</span>
-                <span className="text-amber-400 font-bold font-heading text-lg">
+                <span className="text-[#F28C0F] font-bold font-heading text-lg">
                   R$ {propertyValue.toLocaleString('pt-BR')}
                 </span>
               </div>
@@ -66,7 +66,7 @@ export default function FinancingSimulator({ property, onRequestFormModal }) {
                 step={10000}
                 value={propertyValue}
                 onChange={(e) => setPropertyValue(Number(e.target.value))}
-                className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-amber-500"
+                className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#F28C0F]"
               />
               <div className="flex justify-between text-[11px] text-slate-400 font-medium">
                 <span>R$ {(basePriceNum * 0.8).toLocaleString('pt-BR')}</span>
@@ -89,7 +89,7 @@ export default function FinancingSimulator({ property, onRequestFormModal }) {
                 step={5}
                 value={downpaymentPct}
                 onChange={(e) => setDownpaymentPct(Number(e.target.value))}
-                className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+                className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-emerald-500"
               />
               <div className="flex justify-between text-[11px] text-slate-400 font-medium">
                 <span>10% (Mínimo)</span>
@@ -108,7 +108,7 @@ export default function FinancingSimulator({ property, onRequestFormModal }) {
                     key={years}
                     type="button"
                     onClick={() => setTermYears(years)}
-                    className={`py-3 rounded-xl border text-xs font-bold transition-all cursor-pointer ${termYears === years ? 'bg-amber-500/20 border-amber-500 text-amber-300 shadow-md' : 'bg-slate-900 border-slate-800 text-slate-400 hover:border-slate-700'}`}
+                    className={`py-3 rounded-xl border text-xs font-bold transition-all cursor-pointer ${termYears === years ? 'bg-[#F28C0F]/20 border-[#F28C0F] text-[#F28C0F] shadow-md' : 'bg-[#101C30] border-white/10 text-slate-400 hover:border-slate-700'}`}
                   >
                     {years} Anos ({years * 12}x)
                   </button>
@@ -117,19 +117,19 @@ export default function FinancingSimulator({ property, onRequestFormModal }) {
             </div>
 
             {/* Notice pill */}
-            <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 text-xs text-slate-400 flex items-start gap-2.5">
-              <HelpCircle size={16} className="text-amber-400 shrink-0 mt-0.5" />
+            <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-xs text-slate-300 flex items-start gap-2.5">
+              <HelpCircle size={16} className="text-[#F28C0F] shrink-0 mt-0.5" />
               <span>
-                Você pode utilizar seu <strong className="text-slate-200">FGTS acumulado</strong> para abater o valor da entrada ou amortizar até 80% do saldo devedor.
+                Você pode utilizar seu <strong className="text-white">FGTS acumulado</strong> para abater o valor da entrada ou amortizar até 80% do saldo devedor.
               </span>
             </div>
 
           </div>
 
           {/* Result Highlight Box Column */}
-          <div className="lg:col-span-5 bg-gradient-to-b from-slate-900 to-slate-900/80 border border-emerald-500/30 rounded-2xl p-6 sm:p-8 space-y-6 text-center shadow-xl">
+          <div className="lg:col-span-5 bg-gradient-to-b from-[#101C30] to-[#0A1220] border border-[#F28C0F]/30 rounded-2xl p-6 sm:p-8 space-y-6 text-center shadow-xl">
             
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-[#F28C0F]/20 text-[#F28C0F] border border-[#F28C0F]/30">
               Resultado da Simulação
             </span>
 
@@ -145,18 +145,18 @@ export default function FinancingSimulator({ property, onRequestFormModal }) {
               </span>
             </div>
 
-            <div className="space-y-2 border-t border-slate-800 pt-4 text-xs text-slate-300 text-left">
+            <div className="space-y-2 border-t border-white/10 pt-4 text-xs text-slate-300 text-left">
               <div className="flex justify-between">
                 <span className="text-slate-400">Valor a Financiar:</span>
-                <span className="font-bold text-slate-100">R$ {loanVal.toLocaleString('pt-BR')}</span>
+                <span className="font-bold text-white">R$ {loanVal.toLocaleString('pt-BR')}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-400">Taxa Estimada:</span>
-                <span className="font-bold text-amber-400">{property.financingInfo.ratesFrom}</span>
+                <span className="font-bold text-[#F28C0F]">{property.financingInfo.ratesFrom}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-400">Modalidade:</span>
-                <span className="font-bold text-slate-100">{property.financingInfo.type}</span>
+                <span className="font-bold text-white">{property.financingInfo.type}</span>
               </div>
             </div>
 

@@ -13,10 +13,10 @@ export default function StructuredDataSEO() {
     const propertyListingsSchema = trustedLocations.properties.map((prop) => ({
       "@context": "https://schema.org",
       "@type": "RealEstateListing",
-      "name": `${prop.name} em ${prop.neighborhood} | Matheus Ferreira Corretor`,
+      "name": `${prop.name} em ${prop.neighborhood} | ${brand.brokerName} Corretora`,
       "description": prop.description,
       "datePosted": prop.datePosted,
-      "url": `https://matheusferreiraimoveis.com.br/#properties`,
+      "url": `${window.location.origin}/#properties`,
       "image": [prop.image],
       "mainEntity": {
         "@type": "Apartment",
@@ -54,7 +54,7 @@ export default function StructuredDataSEO() {
         "priceCurrency": prop.priceCurrency,
         "priceValidUntil": "2026-12-31",
         "availability": prop.availability,
-        "url": `https://matheusferreiraimoveis.com.br/#properties`,
+        "url": `${window.location.origin}/#properties`,
         "seller": {
           "@type": "RealEstateAgent",
           "name": brand.name,
@@ -63,22 +63,22 @@ export default function StructuredDataSEO() {
       }
     }));
 
-    // 2. Entidade RealEstateAgent (Matheus Ferreira - CRECI 20367)
+    // 2. Entidade RealEstateAgent (Danielle Galdino - CRECI-PE 21525)
     const agencySchema = {
       "@context": "https://schema.org",
       "@type": "RealEstateAgent",
-      "@id": "https://matheusferreiraimoveis.com.br/#agent",
-      "name": "Matheus Ferreira - Corretor de Imóveis",
-      "alternateName": "Matheus Ferreira Minha Casa Minha Vida",
-      "url": "https://matheusferreiraimoveis.com.br/",
-      "logo": "https://matheusferreiraimoveis.com.br/assets/matheus.jpg",
-      "image": "https://matheusferreiraimoveis.com.br/assets/matheus.jpg",
+      "@id": "https://daniellegaldinoimoveis.com.br/#agent",
+      "name": `${brand.name} - Corretora de Imóveis (${brand.creci})`,
+      "alternateName": `${brand.name} Minha Casa Minha Vida`,
+      "url": "https://daniellegaldinoimoveis.com.br/",
+      "logo": "https://daniellegaldinoimoveis.com.br/assets/logo.png",
+      "image": "https://daniellegaldinoimoveis.com.br/assets/logo.png",
       "description": brand.bio,
       "telephone": "+55-81-99999-9999",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Recife",
+        "addressLocality": "Paulista",
         "addressRegion": "PE",
         "addressCountry": "BR"
       },

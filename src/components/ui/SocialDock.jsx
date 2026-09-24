@@ -12,13 +12,13 @@ import { VISTAHAVEN_DATA } from "@/data/propertyData";
 
 const DEFAULT_SOCIALS = [
   {
-    name: "Instagram Matheus",
+    name: `Instagram ${VISTAHAVEN_DATA.brand.brokerName}`,
     icon: Instagram,
     href: VISTAHAVEN_DATA.brand.instagram,
-    label: "@matheusferreira.corretor"
+    label: "@daniellegaldino.corretora"
   },
   {
-    name: "RM Home Imobiliária",
+    name: VISTAHAVEN_DATA.brand.company || "RM Home Imobiliária",
     icon: Building2,
     href: VISTAHAVEN_DATA.brand.instagramPartner,
     label: "@rmhomeimobiliaria"
@@ -39,7 +39,7 @@ const DEFAULT_SOCIALS = [
     name: "Website",
     icon: Globe,
     href: "#home",
-    label: "matheusferreira.com.br"
+    label: "daniellegaldino.com.br"
   }
 ];
 
@@ -49,7 +49,7 @@ export default function SocialDock({ items = DEFAULT_SOCIALS, className = "" }) 
   return (
     <div
       className={cn(
-        "inline-flex items-center gap-1.5 p-1.5 sm:p-2 rounded-2xl bg-[#0B1C38]/90 border border-[#122C58] shadow-2xl backdrop-blur-md relative",
+        "inline-flex items-center gap-1.5 p-1.5 sm:p-2 rounded-2xl bg-[#0A1220]/90 border border-[#101C30] shadow-2xl backdrop-blur-md relative",
         className
       )}
     >
@@ -74,10 +74,10 @@ export default function SocialDock({ items = DEFAULT_SOCIALS, className = "" }) 
                   transition={{ type: "spring", stiffness: 400, damping: 25 }}
                   className="absolute -top-11 left-1/2 -translate-x-1/2 z-30 pointer-events-none flex flex-col items-center"
                 >
-                  <div className="bg-[#C79C3F] text-[#0B1C38] text-[11px] font-extrabold px-3 py-1 rounded-xl shadow-xl whitespace-nowrap leading-none flex items-center justify-center">
+                  <div className="bg-[#F28C0F] text-[#101C30] text-[11px] font-extrabold px-3 py-1 rounded-xl shadow-xl whitespace-nowrap leading-none flex items-center justify-center">
                     {item.name}
                   </div>
-                  <div className="w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-[#C79C3F] -mt-[1px]" />
+                  <div className="w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-[#F28C0F] -mt-[1px]" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -90,7 +90,7 @@ export default function SocialDock({ items = DEFAULT_SOCIALS, className = "" }) 
               className={cn(
                 "relative flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-200 group cursor-pointer",
                 isHovered
-                  ? "bg-[#122C58] text-[#C79C3F] shadow-inner"
+                  ? "bg-[#101C30] text-[#F28C0F] shadow-inner"
                   : "text-slate-300 hover:text-white"
               )}
               aria-label={item.name}
@@ -100,7 +100,7 @@ export default function SocialDock({ items = DEFAULT_SOCIALS, className = "" }) 
               {isHovered && (
                 <motion.span
                   layoutId="activeUnderline"
-                  className="absolute bottom-1 w-3.5 h-[2.5px] bg-[#C79C3F] rounded-full"
+                  className="absolute bottom-1 w-3.5 h-[2.5px] bg-[#F28C0F] rounded-full"
                   transition={{ type: "spring", bounce: 0.2, duration: 0.4 }}
                 />
               )}

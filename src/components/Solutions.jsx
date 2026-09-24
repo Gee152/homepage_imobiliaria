@@ -12,18 +12,18 @@ export default function Solutions({ onRequestFormModal }) {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-200/60 pb-8">
           <div className="space-y-2 max-w-2xl">
-            <span className="text-xs uppercase font-extrabold tracking-[0.2em] text-[#C79C3F] font-heading block">
+            <span className="text-xs uppercase font-extrabold tracking-[0.2em] text-[#F28C0F] font-heading block">
               {solutions.category}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#122C58] font-heading tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#101C30] font-heading tracking-tight leading-tight">
               {solutions.title}
             </h2>
           </div>
 
           {/* Right Trust Badge */}
           <div className="flex items-center gap-3 bg-[#F8F8F8] p-3.5 px-5 rounded-2xl border border-slate-200/80 shadow-sm max-w-sm">
-            <div className="w-10 h-10 rounded-full bg-[#122C58]/10 text-[#122C58] flex items-center justify-center shrink-0">
-              <ShieldCheck size={22} className="text-[#122C58]" />
+            <div className="w-10 h-10 rounded-full bg-[#101C30]/10 text-[#101C30] flex items-center justify-center shrink-0">
+              <ShieldCheck size={22} className="text-[#101C30]" />
             </div>
             <p className="text-xs font-semibold text-slate-700 leading-snug">
               {solutions.trustBadge}
@@ -35,52 +35,52 @@ export default function Solutions({ onRequestFormModal }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
           {/* Passo 1: Análise de Perfil */}
-          <div className="bg-[#F8F8F8] hover:bg-white border border-slate-200/80 hover:border-[#C79C3F]/50 rounded-3xl p-6 sm:p-8 space-y-4 shadow-sm hover:shadow-xl transition-all duration-300 interactive-card">
+          <div className="bg-[#F8F8F8] hover:bg-white border border-slate-200/80 hover:border-[#F28C0F]/50 rounded-3xl p-6 sm:p-8 space-y-4 shadow-sm hover:shadow-xl transition-all duration-300 interactive-card">
             <div className="flex items-center justify-between">
-              <div className="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-[#122C58] shadow-sm">
-                <UserCheck size={26} className="text-[#122C58]" />
+              <div className="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-[#101C30] shadow-sm">
+                <UserCheck size={26} className="text-[#101C30]" />
               </div>
-              <span className="text-3xl font-black text-[#C79C3F]/40 font-heading">01</span>
+              <span className="text-3xl font-black text-[#F28C0F]/40 font-heading">01</span>
             </div>
-            <h3 className="text-xl font-extrabold text-[#122C58] font-heading">
+            <h3 className="text-xl font-extrabold text-[#101C30] font-heading">
               {solutions.steps[0].title}
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               {solutions.steps[0].description}
             </p>
-            <div className="pt-2 flex items-center gap-2 text-xs font-bold text-[#122C58]">
+            <div className="pt-2 flex items-center gap-2 text-xs font-bold text-[#101C30]">
               <CheckCircle2 size={14} className="text-[#6FC34B]" />
               <span>Cálculo gratuito de subsídio</span>
             </div>
           </div>
 
           {/* Passo 2: Aprovação de Crédito */}
-          <div className="bg-[#F8F8F8] hover:bg-white border border-slate-200/80 hover:border-[#C79C3F]/50 rounded-3xl p-6 sm:p-8 space-y-4 shadow-sm hover:shadow-xl transition-all duration-300 interactive-card">
+          <div className="bg-[#F8F8F8] hover:bg-white border border-slate-200/80 hover:border-[#F28C0F]/50 rounded-3xl p-6 sm:p-8 space-y-4 shadow-sm hover:shadow-xl transition-all duration-300 interactive-card">
             <div className="flex items-center justify-between">
-              <div className="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-[#122C58] shadow-sm">
-                <FileCheck size={26} className="text-[#122C58]" />
+              <div className="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-[#101C30] shadow-sm">
+                <FileCheck size={26} className="text-[#101C30]" />
               </div>
-              <span className="text-3xl font-black text-[#C79C3F]/40 font-heading">02</span>
+              <span className="text-3xl font-black text-[#F28C0F]/40 font-heading">02</span>
             </div>
-            <h3 className="text-xl font-extrabold text-[#122C58] font-heading">
+            <h3 className="text-xl font-extrabold text-[#101C30] font-heading">
               {solutions.steps[1].title}
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               {solutions.steps[1].description}
             </p>
-            <div className="pt-2 flex items-center gap-2 text-xs font-bold text-[#122C58]">
+            <div className="pt-2 flex items-center gap-2 text-xs font-bold text-[#101C30]">
               <CheckCircle2 size={14} className="text-[#6FC34B]" />
               <span>Sem cobrança de taxas ocultas</span>
             </div>
           </div>
 
           {/* Passo 3: Assinatura e Chaves */}
-          <div className="bg-[#122C58] text-white border border-[#0B1C38] rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl transition-all duration-300 interactive-card">
+          <div className="bg-[#101C30] text-white border border-[#0A1220] rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl transition-all duration-300 interactive-card">
             <div className="flex items-center justify-between">
-              <div className="w-14 h-14 rounded-2xl bg-[#0B1C38] border border-[#C79C3F]/40 flex items-center justify-center text-[#C79C3F] shadow-inner">
-                <Key size={26} className="text-[#C79C3F]" />
+              <div className="w-14 h-14 rounded-2xl bg-[#0A1220] border border-[#F28C0F]/40 flex items-center justify-center text-[#F28C0F] shadow-inner">
+                <Key size={26} className="text-[#F28C0F]" />
               </div>
-              <span className="text-3xl font-black text-[#C79C3F]/40 font-heading">03</span>
+              <span className="text-3xl font-black text-[#F28C0F]/40 font-heading">03</span>
             </div>
             <h3 className="text-xl font-extrabold text-white font-heading">
               {solutions.steps[2].title}
@@ -88,7 +88,7 @@ export default function Solutions({ onRequestFormModal }) {
             <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
               {solutions.steps[2].description}
             </p>
-            <div className="pt-2 flex items-center gap-2 text-xs font-bold text-[#C79C3F]">
+            <div className="pt-2 flex items-center gap-2 text-xs font-bold text-[#F28C0F]">
               <CheckCircle2 size={14} className="text-[#6FC34B]" />
               <span>Mais de 300 famílias já comemoraram</span>
             </div>
@@ -106,11 +106,11 @@ export default function Solutions({ onRequestFormModal }) {
               alt={solutions.cards.card1.alt}
               className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C38]/90 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#101C30]/90 via-transparent to-transparent"></div>
             
             {/* Top Badge */}
             <div className="absolute top-5 left-5">
-              <span className="bg-[#C79C3F] text-white font-extrabold text-xs px-4 py-1.5 rounded-full shadow-md">
+              <span className="bg-[#F28C0F] text-white font-extrabold text-xs px-4 py-1.5 rounded-full shadow-md">
                 {solutions.cards.card1.badge}
               </span>
             </div>
@@ -124,10 +124,10 @@ export default function Solutions({ onRequestFormModal }) {
           {/* Card 2: Box Informativo de Saída do Aluguel */}
           <div className="lg:col-span-4 bg-[#F8F8F8] border border-slate-200/80 rounded-3xl p-8 flex flex-col justify-between space-y-6 shadow-sm interactive-card">
             <div className="space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#122C58] text-[#C79C3F] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-2xl bg-[#101C30] text-[#F28C0F] flex items-center justify-center">
                 <Key size={24} />
               </div>
-              <h3 className="text-2xl font-extrabold text-[#122C58] font-heading leading-tight">
+              <h3 className="text-2xl font-extrabold text-[#101C30] font-heading leading-tight">
                 {solutions.cards.card2.title}
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -138,7 +138,7 @@ export default function Solutions({ onRequestFormModal }) {
             <div>
               <button
                 onClick={onRequestFormModal}
-                className="w-full bg-[#C79C3F] hover:bg-[#B58B32] text-white font-extrabold text-xs py-3.5 px-5 rounded-full transition-all cursor-pointer shadow-md active:scale-95 flex items-center justify-center gap-2"
+                className="w-full bg-[#F28C0F] hover:bg-[#DE7D09] text-white font-extrabold text-xs py-3.5 px-5 rounded-full transition-all cursor-pointer shadow-md active:scale-95 flex items-center justify-center gap-2"
               >
                 <span>{solutions.cards.card2.buttonText}</span>
                 <ArrowRight size={15} />
@@ -154,11 +154,11 @@ export default function Solutions({ onRequestFormModal }) {
                 alt={solutions.cards.card3.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-[#0B1C38]/20"></div>
+              <div className="absolute inset-0 bg-[#101C30]/20"></div>
             </div>
 
             <div className="space-y-1">
-              <h3 className="text-base font-bold text-[#122C58] font-heading">
+              <h3 className="text-base font-bold text-[#101C30] font-heading">
                 {solutions.cards.card3.title}
               </h3>
               <p className="text-xs text-slate-500 font-medium">
@@ -168,10 +168,10 @@ export default function Solutions({ onRequestFormModal }) {
 
             <button
               onClick={onRequestFormModal}
-              className="w-full bg-[#122C58] hover:bg-[#0B1C38] text-white font-bold py-3 px-4 rounded-full text-xs transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+              className="w-full bg-[#101C30] hover:bg-[#0A1220] text-white font-bold py-3 px-4 rounded-full text-xs transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
             >
               <span>{solutions.cards.card3.buttonText}</span>
-              <ArrowRight size={14} className="text-[#C79C3F]" />
+              <ArrowRight size={14} className="text-[#F28C0F]" />
             </button>
           </div>
 

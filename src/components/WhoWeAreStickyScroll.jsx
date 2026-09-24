@@ -2,30 +2,29 @@ import React from "react";
 import { StickyScroll } from "./ui/sticky-scroll-reveal";
 import { VISTAHAVEN_DATA } from "../data/propertyData";
 import { Sparkles, ShieldCheck, TrendingUp, CheckCircle, Award, Building2, Key, Users } from "lucide-react";
-import matheusFoto from "../img/matheus.jpg";
 import entregaChaves from "../img/entrega_chaves.jpg";
 import assinaturaContrato from "../img/assinatura_contrato.jpg";
 
 export default function WhoWeAreStickyScroll({ onRequestFormModal }) {
-  const { metrics } = VISTAHAVEN_DATA;
+  const { metrics, brand } = VISTAHAVEN_DATA;
 
-  // Conteúdo detalhado com os pilares de autoridade do Matheus Ferreira e RM Home
+  // Conteúdo detalhado com os pilares de autoridade do Danielle Galdino e RM Home
   const stickyContent = [
     {
       badge: "Autoridade Habitacional",
-      title: "Matheus Ferreira — Especialista Minha Casa Minha Vida",
+      title: `${brand.brokerName} — ${brand.specialty}`,
       description:
         "Mais de 300 sonhos realizados na Grande Recife. Atendimento humanizado, transparente e focado em encontrar a melhor oportunidade para você sair de vez do aluguel com parcelas menores do que imagina.",
       content: (
-        <div className="relative h-full w-full overflow-hidden group bg-[#0B1C38] flex items-center justify-center">
+        <div className="relative h-full w-full overflow-hidden group bg-[#101C30] flex items-center justify-center">
           <img
-            src={matheusFoto}
-            alt="Matheus Ferreira - Corretor de Imóveis"
+            src={brand.photo}
+            alt={brand.photoAlt}
             className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C38]/90 via-transparent to-transparent flex items-end p-4 sm:p-6">
-            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#122C58]/95 px-3.5 py-1.5 rounded-full backdrop-blur-md shadow-lg border border-[#C79C3F]/40">
-              <Award size={14} className="text-[#C79C3F]" /> Matheus Ferreira • CRECI 20367
+          <div className="absolute inset-0 bg-gradient-to-t from-[#101C30]/90 via-transparent to-transparent flex items-end p-4 sm:p-6">
+            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#101C30]/95 px-3.5 py-1.5 rounded-full backdrop-blur-md shadow-lg border border-[#F28C0F]/40">
+              <Award size={14} className="text-[#F28C0F]" /> {brand.brokerName} • {brand.creci}
             </span>
           </div>
         </div>
@@ -43,9 +42,9 @@ export default function WhoWeAreStickyScroll({ onRequestFormModal }) {
             alt="Parceria RM Home Imobiliária"
             className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C38]/90 via-transparent to-transparent flex items-end p-4 sm:p-6">
-            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#122C58]/95 px-3.5 py-1.5 rounded-full backdrop-blur-md shadow-lg border border-white/20">
-              <Building2 size={14} className="text-[#C79C3F]" /> Parceria Oficial RM Home
+          <div className="absolute inset-0 bg-gradient-to-t from-[#101C30]/90 via-transparent to-transparent flex items-end p-4 sm:p-6">
+            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#101C30]/95 px-3.5 py-1.5 rounded-full backdrop-blur-md shadow-lg border border-white/20">
+              <Building2 size={14} className="text-[#F28C0F]" /> Parceria Oficial RM Home
             </span>
           </div>
         </div>
@@ -63,8 +62,8 @@ export default function WhoWeAreStickyScroll({ onRequestFormModal }) {
             alt="Empreendimentos Minha Casa Minha Vida"
             className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C38]/90 via-transparent to-transparent flex items-end p-4 sm:p-6">
-            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#122C58]/95 px-3.5 py-1.5 rounded-full backdrop-blur-md shadow-lg border border-[#6FC34B]/40">
+          <div className="absolute inset-0 bg-gradient-to-t from-[#101C30]/90 via-transparent to-transparent flex items-end p-4 sm:p-6">
+            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#101C30]/95 px-3.5 py-1.5 rounded-full backdrop-blur-md shadow-lg border border-[#6FC34B]/40">
               <ShieldCheck size={14} className="text-[#6FC34B]" /> Correspondente Caixa Homologado
             </span>
           </div>
@@ -83,8 +82,8 @@ export default function WhoWeAreStickyScroll({ onRequestFormModal }) {
             alt="Entrega das chaves do imóvel"
             className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C38]/90 via-transparent to-transparent flex items-end p-4 sm:p-6">
-            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#C79C3F] px-3.5 py-1.5 rounded-full backdrop-blur-md shadow-lg text-[#0B1C38]">
+          <div className="absolute inset-0 bg-gradient-to-t from-[#101C30]/90 via-transparent to-transparent flex items-end p-4 sm:p-6">
+            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#F28C0F] px-3.5 py-1.5 rounded-full backdrop-blur-md shadow-lg text-[#101C30]">
               <Key size={14} /> +300 Chaves Entregues
             </span>
           </div>

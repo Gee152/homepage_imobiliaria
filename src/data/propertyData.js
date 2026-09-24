@@ -1,40 +1,45 @@
-// Matheus Ferreira - Corretor de Imóveis (CRECI 20367) & RM Home Imobiliária
+// Danielle Galdino - Corretora de Imóveis (CRECI-PE 21525) & RM Home Imobiliária
 // Dados Oficiais e Conteúdos em Português conforme PRD
 
-import matheusFoto from "../img/matheus.jpg";
+import danielleFoto from "../img/danielCorretora.jpg";
 import entregaChaves from "../img/entrega_chaves.jpg";
 import assinaturaContrato from "../img/assinatura_contrato.jpg";
 import planta from "../img/planta.avif";
 
 export const VISTAHAVEN_DATA = {
   brand: {
-    name: "Matheus Ferreira",
-    brokerName: "Matheus Ferreira",
-    creci: "CRECI 20367",
-    partner: "RM Home Imobiliária",
-    tagline: "CORRETOR DE IMÓVEIS • CRECI 20367",
-    logoText: "MF",
-    location: "Grande Recife - PE",
-    coverageAreas: "Jaboatão dos Guararapes, Paulista, Abreu e Lima e Recife",
-    specialty: "Especialista em Crédito Habitacional e Minha Casa Minha Vida",
+    name: "Danielle Galdino",
+    brokerName: "Danielle Galdino",
+    creci: "CRECI-PE 21525",
+    photo: danielleFoto,
+    photoAlt: "Danielle Galdino - Corretora de Imóveis • CRECI-PE 21525",
+    slogan: "Transformando sonhos em endereços!",
+    partner: "Danielle Galdino Corretora",
+    company: "RM Home Imobiliária",
+    tagline: "CORRETORA DE IMÓVEIS • CRECI-PE 21525",
+    logoText: "DG",
+    location: "Paulista, Pernambuco",
+    coverageAreas: "Paulista, PE e Região Metropolitana",
+    specialty: "Especialista no programa Minha 🏠 Minha vida",
+    ctaSchedule: "Agende sua visita ⤵️",
     services: "Minha Casa Minha Vida | Financiamento Caixa | Consultoria Habitacional",
-    bio: "Mais de 300 famílias com as chaves na mão. Juntos realizamos sonhos! Especialista no programa Minha Casa Minha Vida e crédito imobiliário na Grande Recife em parceria com a RM Home Imobiliária.",
-    instagram: "https://www.instagram.com/matheusferreira.corretor/",
-    instagramPartner: "https://www.instagram.com/rmhomeimobiliaria/",
+    bio: "Transformando sonhos em endereços! Especialista no programa Minha 🏠 Minha vida em Paulista e Região Metropolitana. Agende sua visita ⤵️ (CRECI-PE 21525).",
+    instagram: "https://www.instagram.com/daniellegaldino.corretora/",
+    instagramPartner: "https://www.instagram.com/daniellegaldino.corretora/",
     whatsappPhone: "5581999999999",
-    whatsapp: "https://api.whatsapp.com/send?phone=5581999999999",
-    whatsappSimulationMessage: "Olá Matheus, vim pelo site e quero simular o financiamento da minha casa própria.",
-    whatsappReferralMessage: "Olá Matheus, vim pelo site e quero indicar um amigo para o programa Indicou, Ganhou R$ 500 no Pix!"
+    whatsapp: "https://api.whatsapp.com/message/U4DSTF6QRBGLI1?autoload=1&app_absent=0&utm_source=ig",
+    whatsappSimulationMessage: "Olá Danielle, vim pelo site e gostaria de agendar uma visita e simular meu financiamento Minha Casa Minha Vida.",
+    whatsappReferralMessage: "Olá Danielle, vim pelo site e quero indicar um amigo para aquisição do imóvel próprio!"
   },
-  
+
   hero: {
-    badge: "ESPECIALISTA MINHA CASA MINHA VIDA 🔑🏠",
+    badge: "Especialista no programa Minha 🏠 Minha vida",
     headlineLine1: "Realize o Sonho da Sua",
     headlineHighlight: "Casa Própria",
-    headlineLine2: "na Grande Recife com Segurança",
-    subtext: "Mais de 300 famílias com as chaves na mão. Juntos realizamos sonhos! (CRECI 20367). Parceria oficial RM Home Imobiliária.",
+    headlineLine2: "em Paulista e Grande Recife com Segurança",
+    subtext: "Transformando sonhos em endereços! Especialista no programa Minha 🏠 Minha vida em Paulista, PE. Agende sua visita ⤵️ (CRECI-PE 21525).",
     ctaPrimary: "Quero Simular Meu Financiamento",
-    ctaSecondary: "Falar com Matheus no WhatsApp",
+    ctaSecondary: "Agende sua visita ⤵️",
     smartHomeBadge: {
       title: "Financiamento Minha Casa Minha Vida",
       desc: "Subsídios do governo, use seu FGTS e parcele sua entrada com parcelas que cabem no bolso.",
@@ -45,7 +50,7 @@ export const VISTAHAVEN_DATA = {
 
   metrics: {
     category: "AUTORIDADE E PROVA SOCIAL",
-    leftTitle: "Por que escolher o Matheus Ferreira?",
+    leftTitle: "Por que escolher a Danielle Galdino?",
     leftDesc: "Mais de 300 sonhos realizados com total segurança jurídica, assessoria do início ao fim e aprovação de crédito ágil junto à Caixa Econômica Federal e principais bancos parceiros.",
     rightTitle: "Parceria oficial com a RM Home Imobiliária e",
     rightHighlight: "mais de 300 famílias com as chaves na mão",
@@ -93,7 +98,7 @@ export const VISTAHAVEN_DATA = {
         image: assinaturaContrato,
         title: "Contrato e Chaves Seguras",
         price: "Aprovação rápida e descomplicada",
-        buttonText: "Falar com o Corretor"
+        buttonText: "Falar com a Corretora"
       }
     }
   },
@@ -101,7 +106,7 @@ export const VISTAHAVEN_DATA = {
   indicouGanhou: {
     badge: "PROGRAMA EXCLUSIVO DE INDICAÇÃO",
     title: "INDICOU, CLIENTE ASSINOU, GANHOU R$ 500,00!",
-    subtitle: "Conhece alguém procurando imóvel ou querendo sair do aluguel? Indique para o Matheus. Quando o contrato for assinado, você ganha R$ 500tão direto no Pix!",
+    subtitle: "Conhece alguém procurando imóvel ou querendo sair do aluguel? Indique para a Danielle. Quando o contrato for assinado, você ganha R$ 500tão direto no Pix!",
     pixAmount: "R$ 500,00",
     cta: "Quero Indicar um Amigo Agora",
     steps: [
@@ -113,7 +118,7 @@ export const VISTAHAVEN_DATA = {
       {
         step: "2",
         title: "O Cliente Assina",
-        desc: "O Matheus cuida da consultoria, aprovação de crédito e fechamento do contrato."
+        desc: "A Danielle cuida da consultoria, aprovação de crédito e fechamento do contrato."
       },
       {
         step: "3",
@@ -257,7 +262,7 @@ export const VISTAHAVEN_DATA = {
       location: "Jaboatão dos Guararapes - PE",
       tag: "Sonho Realizado • Chaves na Mão",
       stars: 5,
-      text: "Estávamos pagando aluguel há 5 anos sem esperança. O Matheus fez nossa simulação, conseguiu um subsídio maravilhoso pelo Minha Casa Minha Vida e cuidou de toda aprovação na Caixa. Hoje estamos no nosso próprio apartamento!",
+      text: "Estávamos pagando aluguel há 5 anos sem esperança. A Danielle fez nossa simulação, conseguiu um subsídio maravilhoso pelo Minha Casa Minha Vida e cuidou de toda aprovação na Caixa. Hoje estamos no nosso próprio apartamento!",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"
     },
     {
@@ -265,7 +270,7 @@ export const VISTAHAVEN_DATA = {
       location: "Paulista - PE",
       tag: "Contrato Assinado • Caixa",
       stars: 5,
-      text: "Atendimento nota mil! O Matheus tirou todas as nossas dúvidas com muita paciência e transparência. A parceria dele com a RM Home dá uma segurança gigante. Recomendo de olhos fechados.",
+      text: "Atendimento nota mil! A Danielle tirou todas as nossas dúvidas com muita paciência e transparência. A parceria dela com a RM Home dá uma segurança gigante. Recomendo de olhos fechados.",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
     },
     {
@@ -273,7 +278,7 @@ export const VISTAHAVEN_DATA = {
       location: "Abreu e Lima - PE",
       tag: "Cliente & Indicador",
       stars: 5,
-      text: "Comprei meu primeiro apê com o Matheus e depois ainda indiquei dois amigos do trabalho. Os dois fecharam e recebi R$ 1.000 no Pix direto na conta pelo programa Indicou Ganhou! Sensacional!",
+      text: "Comprei meu primeiro apê com a Danielle e depois ainda indiquei dois amigos do trabalho. Os dois fecharam e recebi R$ 1.000 no Pix direto na conta pelo programa Indicou Ganhou! Sensacional!",
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"
     }
   ]

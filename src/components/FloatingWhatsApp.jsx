@@ -22,7 +22,7 @@ export default function FloatingWhatsApp() {
     };
   }, []);
 
-  const defaultMessage = VISTAHAVEN_DATA.brand.whatsappSimulationMessage || "Olá Matheus, vim pelo site e quero simular o financiamento da minha casa própria.";
+  const defaultMessage = VISTAHAVEN_DATA.brand.whatsappSimulationMessage || "Olá Danielle, vim pelo site e gostaria de agendar uma visita e simular meu financiamento Minha Casa Minha Vida.";
   const whatsappUrl = `${VISTAHAVEN_DATA.brand.whatsapp}&text=${encodeURIComponent(defaultMessage)}`;
 
   const handleClick = () => {
@@ -32,7 +32,7 @@ export default function FloatingWhatsApp() {
     if (window.gtag) {
       window.gtag('event', 'whatsapp_floating_click', {
         event_category: 'contact',
-        event_label: 'Matheus Ferreira'
+        event_label: VISTAHAVEN_DATA.brand.brokerName
       });
     }
   };
@@ -46,7 +46,7 @@ export default function FloatingWhatsApp() {
     >
       {/* Balão de Dica / Speech Bubble (Desktop) */}
       <div
-        className={`hidden sm:flex items-center gap-2.5 bg-[#0B1C38]/95 text-white pl-3.5 pr-2 py-2 rounded-2xl shadow-2xl border border-[#C79C3F]/40 backdrop-blur-md transition-all duration-300 select-none ${
+        className={`hidden sm:flex items-center gap-2.5 bg-[#101C30]/95 text-white pl-3.5 pr-2 py-2 rounded-2xl shadow-2xl border border-[#F28C0F]/40 backdrop-blur-md transition-all duration-300 select-none ${
           showTooltip ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-3 pointer-events-none'
         }`}
       >
@@ -59,10 +59,10 @@ export default function FloatingWhatsApp() {
         >
           <span className="text-[10px] text-[#6FC34B] font-extrabold uppercase tracking-wider flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#6FC34B] animate-pulse"></span>
-            Online Agora • CRECI 20367
+            Online Agora • {VISTAHAVEN_DATA.brand.creci}
           </span>
-          <span className="text-xs font-bold text-slate-100 group-hover:text-[#C79C3F] transition-colors">
-            Falar com Matheus Ferreira
+          <span className="text-xs font-bold text-slate-100 group-hover:text-[#F28C0F] transition-colors">
+            Falar com {VISTAHAVEN_DATA.brand.brokerName}
           </span>
         </a>
         <button
@@ -82,8 +82,8 @@ export default function FloatingWhatsApp() {
         target="_blank"
         rel="noopener noreferrer"
         onClick={handleClick}
-        aria-label="Falar com Matheus Ferreira no WhatsApp"
-        title="Falar com Matheus Ferreira"
+        aria-label={`Falar com ${VISTAHAVEN_DATA.brand.brokerName} no WhatsApp`}
+        title={`Falar com ${VISTAHAVEN_DATA.brand.brokerName}`}
         className="relative group flex items-center justify-center w-14 h-14 sm:w-15 sm:h-15 rounded-full bg-gradient-to-tr from-[#128C7E] via-[#25D366] to-[#25D366] text-white shadow-2xl shadow-emerald-950/40 hover:shadow-emerald-500/50 hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer border border-white/30"
       >
         {/* Efeito Radar */}

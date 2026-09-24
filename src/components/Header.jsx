@@ -24,7 +24,7 @@ export default function Header({ onRequestFormModal }) {
     const handleScroll = () => {
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
       const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      
+
       if (totalScroll > 0) {
         setScrollProgress((currentScroll / totalScroll) * 100);
       }
@@ -72,26 +72,24 @@ export default function Header({ onRequestFormModal }) {
   const showMobileHeader = isMobileScrolled50;
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out ${
-      showMobileHeader
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out ${showMobileHeader
         ? 'translate-y-0 opacity-100 pointer-events-auto'
         : showDesktopHeader
           ? 'max-sm:-translate-y-full max-sm:opacity-0 max-sm:pointer-events-none sm:translate-y-0 sm:opacity-100 sm:pointer-events-auto'
           : '-translate-y-full opacity-0 pointer-events-none'
-    } ${
-      isScrolled
-        ? 'bg-white/95 backdrop-blur-md shadow-md shadow-[#122C58]/5 border-b border-slate-200/80 py-0'
+      } ${isScrolled
+        ? 'bg-white/95 backdrop-blur-md shadow-md shadow-[#101C30]/5 border-b border-slate-200/80 py-0'
         : 'bg-white/90 backdrop-blur-sm border-b border-slate-100/80'
-    }`}>
-      {/* Top Interactive Scroll Progress Bar com Gradiente Azul Marinho & Dourado */}
+      }`}>
+      {/* Top Interactive Scroll Progress Bar com Gradiente Azul Marinho & Laranja */}
       <div
-        className="absolute top-0 left-0 h-[3px] bg-gradient-to-r from-[#122C58] via-[#C79C3F] to-[#6FC34B] transition-all duration-150 ease-out z-50 shadow-sm shadow-[#C79C3F]/50"
+        className="absolute top-0 left-0 h-[3px] bg-gradient-to-r from-[#101C30] via-[#F28C0F] to-[#101C30] transition-all duration-150 ease-out z-50 shadow-sm shadow-[#F28C0F]/50"
         style={{ width: `${scrollProgress}%` }}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        
-        {/* Brand Logo Oficial Matheus Ferreira & RM Home */}
+
+        {/* Brand Logo Oficial Danielle Galdino & RM Home */}
         <LogoEduarda
           variant="dark"
           onClick={(e) => handleNavClick(e, '#home')}
@@ -102,44 +100,40 @@ export default function Header({ onRequestFormModal }) {
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, '#home')}
-            className={`transition-all py-1 relative ${
-              activeSection === 'home'
-                ? 'text-[#122C58] font-bold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#C79C3F] after:rounded-full'
-                : 'hover:text-[#122C58]'
-            }`}
+            className={`transition-all py-1 relative ${activeSection === 'home'
+                ? 'text-[#101C30] font-bold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#F28C0F] after:rounded-full'
+                : 'hover:text-[#F28C0F]'
+              }`}
           >
             Início
           </a>
           <a
             href="#who-we-are"
             onClick={(e) => handleNavClick(e, '#who-we-are')}
-            className={`transition-all py-1 relative ${
-              activeSection === 'who-we-are'
-                ? 'text-[#122C58] font-bold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#C79C3F] after:rounded-full'
-                : 'hover:text-[#122C58]'
-            }`}
+            className={`transition-all py-1 relative ${activeSection === 'who-we-are'
+                ? 'text-[#101C30] font-bold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#F28C0F] after:rounded-full'
+                : 'hover:text-[#F28C0F]'
+              }`}
           >
             Sobre
           </a>
           <a
             href="#services"
             onClick={(e) => handleNavClick(e, '#services')}
-            className={`transition-all py-1 relative ${
-              activeSection === 'services'
-                ? 'text-[#122C58] font-bold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#C79C3F] after:rounded-full'
-                : 'hover:text-[#122C58]'
-            }`}
+            className={`transition-all py-1 relative ${activeSection === 'services'
+                ? 'text-[#101C30] font-bold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#F28C0F] after:rounded-full'
+                : 'hover:text-[#F28C0F]'
+              }`}
           >
             Como Funciona
           </a>
           <a
             href="#properties"
             onClick={(e) => handleNavClick(e, '#properties')}
-            className={`transition-all py-1 relative ${
-              activeSection === 'properties'
-                ? 'text-[#122C58] font-bold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#C79C3F] after:rounded-full'
-                : 'hover:text-[#122C58]'
-            }`}
+            className={`transition-all py-1 relative ${activeSection === 'properties'
+                ? 'text-[#101C30] font-bold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#F28C0F] after:rounded-full'
+                : 'hover:text-[#F28C0F]'
+              }`}
           >
             Imóveis
           </a>
@@ -149,7 +143,7 @@ export default function Header({ onRequestFormModal }) {
             onClick={(e) => handleNavClick(e, '#indicou-ganhou')}
             className={`transition-all py-1 relative flex items-center gap-1 ${
               activeSection === 'indicou-ganhou'
-                ? 'text-[#122C58] font-bold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#6FC34B] after:rounded-full'
+                ? 'text-[#101C30] font-bold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#6FC34B] after:rounded-full'
                 : 'text-emerald-700 hover:text-emerald-800'
             }`}
           >
@@ -158,11 +152,11 @@ export default function Header({ onRequestFormModal }) {
           </a> */}
         </nav>
 
-        {/* Right CTA Button Dourado */}
+        {/* Right CTA Button Laranja */}
         <div className="hidden md:flex items-center gap-4">
           <button
             onClick={onRequestFormModal}
-            className="bg-[#C79C3F] hover:bg-[#B58B32] text-white font-bold text-sm px-6 py-2.5 rounded-full transition-all shadow-md shadow-[#C79C3F]/30 active:scale-95 hover:scale-105 cursor-pointer flex items-center gap-2 group"
+            className="bg-[#F28C0F] hover:bg-[#DE7D09] text-white font-bold text-sm px-6 py-2.5 rounded-full transition-all shadow-md shadow-[#F28C0F]/30 active:scale-95 hover:scale-105 cursor-pointer flex items-center gap-2 group"
           >
             <Calculator size={16} className="group-hover:rotate-12 transition-transform text-white" />
             <span>Simular Financiamento</span>
@@ -172,7 +166,7 @@ export default function Header({ onRequestFormModal }) {
         {/* Mobile Hamburger Menu Toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-[#122C58] hover:text-[#C79C3F] cursor-pointer transition-colors"
+          className="md:hidden p-2 text-[#101C30] hover:text-[#F28C0F] cursor-pointer transition-colors"
           aria-label="Abrir Menu"
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -186,28 +180,28 @@ export default function Header({ onRequestFormModal }) {
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, '#home')}
-            className="block text-sm font-bold text-[#122C58] py-2 border-b border-slate-100"
+            className="block text-sm font-bold text-[#101C30] py-2 border-b border-slate-100"
           >
             Início
           </a>
           <a
             href="#who-we-are"
             onClick={(e) => handleNavClick(e, '#who-we-are')}
-            className="block text-sm font-semibold text-slate-700 hover:text-[#122C58] py-2 border-b border-slate-100"
+            className="block text-sm font-semibold text-slate-700 hover:text-[#F28C0F] py-2 border-b border-slate-100"
           >
             Sobre
           </a>
           <a
             href="#services"
             onClick={(e) => handleNavClick(e, '#services')}
-            className="block text-sm font-semibold text-slate-700 hover:text-[#122C58] py-2 border-b border-slate-100"
+            className="block text-sm font-semibold text-slate-700 hover:text-[#F28C0F] py-2 border-b border-slate-100"
           >
             Como Funciona
           </a>
           <a
             href="#properties"
             onClick={(e) => handleNavClick(e, '#properties')}
-            className="block text-sm font-semibold text-slate-700 hover:text-[#122C58] py-2 border-b border-slate-100"
+            className="block text-sm font-semibold text-slate-700 hover:text-[#F28C0F] py-2 border-b border-slate-100"
           >
             Imóveis MCMV
           </a>
@@ -225,7 +219,7 @@ export default function Header({ onRequestFormModal }) {
               setMobileMenuOpen(false);
               onRequestFormModal();
             }}
-            className="w-full mt-2 bg-[#C79C3F] hover:bg-[#B58B32] text-white font-bold py-3 rounded-full text-xs uppercase tracking-wider shadow-md transition-all active:scale-95 flex items-center justify-center gap-2"
+            className="w-full mt-2 bg-[#F28C0F] hover:bg-[#DE7D09] text-white font-bold py-3 rounded-full text-xs uppercase tracking-wider shadow-md transition-all active:scale-95 flex items-center justify-center gap-2"
           >
             <Calculator size={15} />
             Simular Financiamento

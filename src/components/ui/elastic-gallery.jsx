@@ -46,14 +46,18 @@ export function ElasticGallery({
   items = DEFAULT_ITEMS,
   className = "",
   isHeroBackground = false,
+  defaultActiveId,
   onItemClick,
 }) {
-  const [activeId, setActiveId] = useState("01");
+  // Ao carregar a tela, abre automaticamente a imagem do meio e não a do canto
+  const middleIndex = Math.floor(items.length / 2);
+  const initialActiveId = defaultActiveId || items[middleIndex]?.id || "03";
+  const [activeId, setActiveId] = useState(initialActiveId);
 
   // Quando usado como Background do Hero: ocupa 100% da área de fundo de forma fluida
   if (isHeroBackground) {
     return (
-      <div className={cn("w-full h-full flex flex-row gap-1.5 sm:gap-2 select-none overflow-hidden", className)}>
+      <div className={cn("w-full h-full flex flex-row gap-1 sm:gap-2 select-none overflow-hidden", className)}>
         {items.map((item) => (
           <div
             key={item.id}
@@ -64,7 +68,7 @@ export function ElasticGallery({
             }}
             className={cn(
               "relative h-full transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer overflow-hidden group",
-              activeId === item.id ? "flex-[4.5]" : "flex-[1] hover:flex-[1.8]"
+              activeId === item.id ? "flex-[14] sm:flex-[4.5]" : "flex-[0.6] sm:flex-[1] sm:hover:flex-[1.8]"
             )}
           >
             {/* Background Image */}
@@ -90,7 +94,7 @@ export function ElasticGallery({
                 activeId === item.id ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               )}
             >
-              <span className="text-[10px] font-bold text-[#C79C3F] uppercase tracking-widest block mb-1">
+              <span className="text-[10px] font-bold text-[#F28C0F] uppercase tracking-widest block mb-1">
                 {item.category}
               </span>
               <h3 className="text-sm sm:text-base font-extrabold text-white font-heading">
@@ -114,7 +118,7 @@ export function ElasticGallery({
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
             <div>
-              <span className="text-xs font-bold text-[#C79C3F] block">{item.category}</span>
+              <span className="text-xs font-bold text-[#F28C0F] block">{item.category}</span>
               <h4 className="text-sm font-bold text-white">{item.title}</h4>
             </div>
           </div>

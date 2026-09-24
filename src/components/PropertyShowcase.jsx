@@ -6,31 +6,31 @@ export default function PropertyShowcase({ property, onRequestFormModal }) {
   const [activeImage, setActiveImage] = useState(property.images.facade);
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-950 border-t border-slate-900 relative">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#101C30] border-t border-white/10 relative">
       <div className="max-w-7xl mx-auto space-y-12">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-800 pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
           <div>
-            <span className="text-amber-400 font-bold text-xs uppercase tracking-widest block mb-2">
+            <span className="text-[#F28C0F] font-bold text-xs uppercase tracking-widest block mb-2">
               Infraestrutura & Projetos
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-100 font-heading">
-              Conheça Cada Detalhe do <span className="text-amber-400">{property.name}</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white font-heading">
+              Conheça Cada Detalhe do <span className="text-[#F28C0F]">{property.name}</span>
             </h2>
           </div>
 
           {/* Tab Switcher */}
-          <div className="flex items-center gap-2 bg-slate-900 p-1.5 rounded-xl border border-slate-800 self-start md:self-auto">
+          <div className="flex items-center gap-2 bg-[#0A1220] p-1.5 rounded-xl border border-white/10 self-start md:self-auto">
             <button
               onClick={() => setActiveTab('gallery')}
-              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-2 ${activeTab === 'gallery' ? 'bg-amber-500 text-slate-950 shadow-md' : 'text-slate-400 hover:text-slate-200'}`}
+              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-2 ${activeTab === 'gallery' ? 'bg-[#F28C0F] text-white shadow-md' : 'text-slate-400 hover:text-slate-200'}`}
             >
               <Eye size={14} /> Galeria de Imagens
             </button>
             <button
               onClick={() => setActiveTab('floorplans')}
-              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-2 ${activeTab === 'floorplans' ? 'bg-amber-500 text-slate-950 shadow-md' : 'text-slate-400 hover:text-slate-200'}`}
+              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-2 ${activeTab === 'floorplans' ? 'bg-[#F28C0F] text-white shadow-md' : 'text-slate-400 hover:text-slate-200'}`}
             >
               <Layers size={14} /> Plantas Humanizadas
             </button>
@@ -42,20 +42,20 @@ export default function PropertyShowcase({ property, onRequestFormModal }) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Main Featured Image Display */}
-            <div className="lg:col-span-8 relative rounded-2xl overflow-hidden border border-slate-800 shadow-2xl group">
+            <div className="lg:col-span-8 relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
               <img
                 src={activeImage || property.images.facade}
                 alt="Detalhes do Imóvel"
                 className="w-full h-[400px] sm:h-[500px] object-cover transition-all duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#101C30] via-transparent to-transparent opacity-80"></div>
               <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between">
-                <span className="text-xs font-bold text-slate-200 bg-slate-900/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-slate-700">
+                <span className="text-xs font-bold text-slate-200 bg-[#0A1220]/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10">
                   Residencial de Alta Performance
                 </span>
                 <button
                   onClick={onRequestFormModal}
-                  className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs px-4 py-2 rounded-xl transition-all flex items-center gap-1.5 shadow-lg cursor-pointer"
+                  className="bg-[#F28C0F] hover:bg-[#DE7D09] text-white font-bold text-xs px-4 py-2 rounded-xl transition-all flex items-center gap-1.5 shadow-lg cursor-pointer"
                 >
                   <Maximize2 size={14} /> Receber Catálogo em Alta Definição
                 </button>
@@ -77,7 +77,7 @@ export default function PropertyShowcase({ property, onRequestFormModal }) {
                   <button
                     key={idx}
                     onClick={() => setActiveImage(item.img)}
-                    className={`flex items-center gap-3 p-2.5 rounded-xl border text-left transition-all cursor-pointer ${activeImage === item.img ? 'bg-amber-500/10 border-amber-500 text-amber-300' : 'bg-slate-900/60 border-slate-800 hover:border-slate-700 text-slate-300'}`}
+                    className={`flex items-center gap-3 p-2.5 rounded-xl border text-left transition-all cursor-pointer ${activeImage === item.img ? 'bg-[#F28C0F]/10 border-[#F28C0F] text-[#F28C0F]' : 'bg-[#0A1220]/60 border-white/10 hover:border-[#F28C0F]/40 text-slate-300'}`}
                   >
                     <img src={item.img} alt={item.label} className="w-14 h-12 rounded-lg object-cover" />
                     <div>
@@ -94,20 +94,20 @@ export default function PropertyShowcase({ property, onRequestFormModal }) {
           /* Floor Plans View */
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {property.floorPlans.map((plan, idx) => (
-              <div key={idx} className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 hover:border-amber-500/40 transition-all shadow-xl">
-                <div className="relative rounded-xl overflow-hidden border border-slate-800 h-64">
+              <div key={idx} className="bg-[#0A1220] border border-white/10 rounded-2xl p-6 space-y-4 hover:border-[#F28C0F]/40 transition-all shadow-xl">
+                <div className="relative rounded-xl overflow-hidden border border-white/10 h-64">
                   <img src={plan.img} alt={plan.title} className="w-full h-full object-cover" />
-                  <div className="absolute top-3 left-3 bg-amber-500 text-slate-950 font-extrabold text-xs px-3 py-1 rounded-full">
+                  <div className="absolute top-3 left-3 bg-[#F28C0F] text-white font-extrabold text-xs px-3 py-1 rounded-full">
                     Opção de Planta {idx + 1}
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-100 font-heading">{plan.title}</h3>
+                  <h3 className="text-xl font-bold text-white font-heading">{plan.title}</h3>
                   <p className="text-xs text-slate-400 mt-1">{plan.desc}</p>
                 </div>
                 <button
                   onClick={onRequestFormModal}
-                  className="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-slate-200 font-bold py-3 rounded-xl text-xs transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full bg-white/10 hover:bg-[#F28C0F] hover:text-white text-slate-200 font-bold py-3 rounded-xl text-xs transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   Solicitar PDF das Plantas Detalhadas
                   <ArrowUpRight size={16} />
@@ -118,9 +118,9 @@ export default function PropertyShowcase({ property, onRequestFormModal }) {
         )}
 
         {/* Differentiators & Features Grid */}
-        <div className="pt-8 border-t border-slate-900">
+        <div className="pt-8 border-t border-white/10">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <h3 className="text-2xl font-bold text-slate-100 font-heading">
+            <h3 className="text-2xl font-bold text-white font-heading">
               Diferenciais Construtivos & Lazer Exclusivo
             </h3>
             <p className="text-xs text-slate-400 mt-2">
@@ -130,8 +130,8 @@ export default function PropertyShowcase({ property, onRequestFormModal }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {property.features.map((feat, idx) => (
-              <div key={idx} className="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl hover:border-slate-700 transition-all space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold">
+              <div key={idx} className="bg-[#0A1220]/60 border border-white/10 p-6 rounded-2xl hover:border-[#F28C0F]/40 transition-all space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-[#F28C0F]/10 text-[#F28C0F] flex items-center justify-center font-bold">
                   <CheckCircle size={20} />
                 </div>
                 <h4 className="text-base font-bold text-slate-200 font-heading">{feat.title}</h4>

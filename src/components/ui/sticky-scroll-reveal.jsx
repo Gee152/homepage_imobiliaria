@@ -34,9 +34,9 @@ export const StickyScroll = ({
   ];
 
   const linearGradients = [
-    "linear-gradient(to bottom right, rgb(18, 44, 88), rgb(11, 28, 56))",
-    "linear-gradient(to bottom right, rgb(199, 156, 63), rgb(181, 139, 50))",
-    "linear-gradient(to bottom right, rgb(18, 44, 88), rgb(30, 58, 138))",
+    "linear-gradient(to bottom right, rgb(16, 28, 48), rgb(10, 18, 32))",
+    "linear-gradient(to bottom right, rgb(242, 140, 15), rgb(222, 125, 9))",
+    "linear-gradient(to bottom right, rgb(16, 28, 48), rgb(30, 41, 59))",
     "linear-gradient(to bottom right, rgb(111, 195, 75), rgb(22, 163, 74))",
   ];
 
@@ -70,7 +70,7 @@ export const StickyScroll = ({
       {/* Scroll Container de Largura Total (w-full): Joga a barra de rolagem para a lateral da tela */}
       <div
         ref={ref}
-        className="w-full h-[38rem] sm:h-[42rem] xl:h-[46rem] overflow-y-auto scrollbar-thin scrollbar-thumb-purple-300 hover:scrollbar-thumb-purple-500 pr-1 sm:pr-2"
+        className="w-full h-[38rem] sm:h-[42rem] xl:h-[46rem] overflow-y-auto scrollbar-thin scrollbar-thumb-orange-300 hover:scrollbar-thumb-orange-500 pr-1 sm:pr-2"
       >
         <div className="max-w-[86rem] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-center items-start gap-8 lg:gap-14 xl:gap-16">
           {/* Coluna de Conteúdo/Pilares Centralizada */}
@@ -86,7 +86,7 @@ export const StickyScroll = ({
                     className={cn(
                       "px-3.5 py-1 rounded-full text-[10px] sm:text-xs font-extrabold uppercase tracking-wider transition-all duration-300",
                       activeCard === index
-                        ? "bg-purple-600 text-white shadow-md shadow-purple-600/20"
+                        ? "bg-[#F28C0F] text-white shadow-md shadow-[#F28C0F]/20"
                         : "bg-slate-200/70 text-slate-500"
                     )}
                   >

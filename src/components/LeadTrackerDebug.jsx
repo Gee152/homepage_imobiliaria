@@ -17,7 +17,7 @@ export default function LeadTrackerDebug({ lastLead }) {
       {!isOpen ? (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-slate-900/90 hover:bg-slate-900 border border-amber-500/40 text-amber-400 font-bold text-xs px-3.5 py-2 rounded-full shadow-2xl backdrop-blur-md flex items-center gap-2 cursor-pointer transition-all hover:scale-105"
+          className="bg-[#101C30]/90 hover:bg-[#101C30] border border-[#F28C0F]/40 text-[#F28C0F] font-bold text-xs px-3.5 py-2 rounded-full shadow-2xl backdrop-blur-md flex items-center gap-2 cursor-pointer transition-all hover:scale-105"
         >
           <Activity size={14} className="animate-pulse text-emerald-400" />
           <span>Tracking & CRM Debugger</span>
@@ -26,10 +26,10 @@ export default function LeadTrackerDebug({ lastLead }) {
           )}
         </button>
       ) : (
-        <div className="bg-slate-950 border border-slate-800 rounded-2xl p-5 shadow-2xl w-80 sm:w-96 text-xs space-y-4 backdrop-blur-xl relative">
-          <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-            <div className="flex items-center gap-2 font-bold text-slate-100 font-heading">
-              <Terminal size={16} className="text-amber-400" />
+        <div className="bg-[#0A1220] border border-white/10 rounded-2xl p-5 shadow-2xl w-80 sm:w-96 text-xs space-y-4 backdrop-blur-xl relative">
+          <div className="flex items-center justify-between border-b border-white/10 pb-3">
+            <div className="flex items-center gap-2 font-bold text-white font-heading">
+              <Terminal size={16} className="text-[#F28C0F]" />
               <span>Painel de Eventos & Webhook CRM</span>
             </div>
             <button
@@ -44,13 +44,13 @@ export default function LeadTrackerDebug({ lastLead }) {
           <div className="space-y-2">
             <span className="text-[11px] text-slate-400 uppercase font-bold block">Status dos Pixels</span>
             <div className="grid grid-cols-2 gap-2">
-              <div className="bg-slate-900 p-2 rounded-lg border border-slate-800 flex items-center justify-between text-slate-300">
+              <div className="bg-[#101C30] p-2 rounded-lg border border-white/10 flex items-center justify-between text-slate-300">
                 <span>Facebook Pixel</span>
                 <span className="text-emerald-400 font-bold flex items-center gap-1">
                   <CheckCircle size={12} /> Ativo
                 </span>
               </div>
-              <div className="bg-slate-900 p-2 rounded-lg border border-slate-800 flex items-center justify-between text-slate-300">
+              <div className="bg-[#101C30] p-2 rounded-lg border border-white/10 flex items-center justify-between text-slate-300">
                 <span>Google Tag</span>
                 <span className="text-emerald-400 font-bold flex items-center gap-1">
                   <CheckCircle size={12} /> Ativo
@@ -66,7 +66,7 @@ export default function LeadTrackerDebug({ lastLead }) {
               {lastLead && (
                 <button
                   onClick={copyPayload}
-                  className="text-amber-400 hover:text-amber-300 text-[10px] font-semibold flex items-center gap-1 cursor-pointer"
+                  className="text-[#F28C0F] hover:text-[#DE7D09] text-[10px] font-semibold flex items-center gap-1 cursor-pointer"
                 >
                   <Copy size={12} /> {copied ? 'Copiado!' : 'Copiar JSON'}
                 </button>
