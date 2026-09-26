@@ -18,7 +18,11 @@ const DEFAULT_SOCIALS = [
     label: "@daniellegaldino.corretora"
   },
   {
+<<<<<<< Updated upstream
     name: VISTAHAVEN_DATA.brand.company || "Aurora Imobiliária",
+=======
+    name: VISTAHAVEN_DATA.brand.company || "RM Home Imobiliária",
+>>>>>>> Stashed changes
     icon: Building2,
     href: VISTAHAVEN_DATA.brand.instagramPartner,
     label: "@auroraimobiliariaoficial"

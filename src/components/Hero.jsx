@@ -103,11 +103,19 @@ export default function Hero({ onRequestFormModal }) {
             </p>
           </div>
 
+<<<<<<< Updated upstream
           {/* CTAs de Conversão Imediata (Lado a Lado e Menores no Mobile) */}
           <div className="pt-2 flex flex-row items-center justify-center gap-2 sm:gap-3.5 w-full max-w-sm sm:max-w-none mx-auto">
             <button
               onClick={onRequestFormModal}
               className="flex-1 sm:flex-initial bg-[#F28C0F] hover:bg-[#DE7D09] text-white font-extrabold text-[11px] sm:text-base px-2.5 sm:px-8 py-2.5 sm:py-3.5 rounded-full transition-all shadow-xl shadow-[#F28C0F]/30 active:scale-95 hover:scale-105 cursor-pointer flex items-center justify-center gap-1.5 sm:gap-2.5 animate-pulseOrange"
+=======
+          {/* CTAs de Conversão Imediata (Botão Laranja de Destaque) */}
+          <div className="pt-2 flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto">
+            <button
+              onClick={onRequestFormModal}
+              className="w-full sm:w-auto bg-[#F28C0F] hover:bg-[#DE7D09] text-white font-extrabold text-sm sm:text-base px-8 py-4 rounded-full transition-all shadow-xl shadow-[#F28C0F]/30 active:scale-95 hover:scale-105 cursor-pointer flex items-center justify-center gap-2.5 animate-pulseOrange"
+>>>>>>> Stashed changes
             >
               <Calculator size={15} className="shrink-0 sm:w-[18px] sm:h-[18px]" />
               <span className="hidden sm:inline">Quero Simular Meu Financiamento</span>
@@ -120,8 +128,13 @@ export default function Hero({ onRequestFormModal }) {
               rel="noopener noreferrer"
               className="flex-1 sm:flex-initial bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] sm:text-base px-2.5 sm:px-6 py-2.5 sm:py-3.5 rounded-full transition-all shadow-lg active:scale-95 flex items-center justify-center gap-1.5 sm:gap-2 border border-emerald-400/40"
             >
+<<<<<<< Updated upstream
               <MessageSquare size={15} className="shrink-0 sm:w-[18px] sm:h-[18px]" />
               <span className="whitespace-nowrap">{VISTAHAVEN_DATA.brand.ctaSchedule}</span>
+=======
+              <MessageSquare size={18} />
+              <span>{VISTAHAVEN_DATA.brand.ctaSchedule}</span>
+>>>>>>> Stashed changes
             </a>
           </div>
 
@@ -160,11 +173,19 @@ export default function Hero({ onRequestFormModal }) {
             {VISTAHAVEN_DATA.hero.subtext}
           </p>
 
+<<<<<<< Updated upstream
           {/* CTAs de Conversão Laranja & WhatsApp (Lado a Lado e Menores no Mobile) */}
           <div className="pt-2 flex flex-row items-center justify-center gap-2 sm:gap-3.5 w-full max-w-sm sm:max-w-none mx-auto">
             <button
               onClick={onRequestFormModal}
               className="flex-1 sm:flex-initial bg-[#F28C0F] hover:bg-[#DE7D09] text-white font-extrabold text-[11px] sm:text-base px-2.5 sm:px-8 py-2.5 sm:py-3.5 rounded-full transition-all shadow-xl shadow-[#F28C0F]/30 active:scale-95 hover:scale-105 cursor-pointer flex items-center justify-center gap-1.5 sm:gap-2.5"
+=======
+          {/* CTAs de Conversão Laranja & WhatsApp */}
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+            <button
+              onClick={onRequestFormModal}
+              className="w-full sm:w-auto bg-[#F28C0F] hover:bg-[#DE7D09] text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-full transition-all shadow-xl shadow-[#F28C0F]/30 active:scale-95 hover:scale-105 cursor-pointer flex items-center justify-center gap-2.5"
+>>>>>>> Stashed changes
             >
               <Calculator size={15} className="shrink-0 sm:w-[18px] sm:h-[18px]" />
               <span className="hidden sm:inline">Simular Meu Financiamento</span>
@@ -188,7 +209,11 @@ export default function Hero({ onRequestFormModal }) {
               <ShieldCheck size={14} className="text-[#6FC34B]" /> Correspondente Caixa Homologado
             </span>
             <span className="flex items-center gap-1.5 bg-[#101C30]/80 px-3 py-1 rounded-full border border-white/10">
+<<<<<<< Updated upstream
               <Award size={14} className="text-[#F28C0F]" /> Parceria Oficial Aurora Imobiliária
+=======
+              <Award size={14} className="text-[#F28C0F]" /> Parceria Oficial RM Home
+>>>>>>> Stashed changes
             </span>
           </div>
 

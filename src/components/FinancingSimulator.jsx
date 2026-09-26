@@ -25,7 +25,11 @@ export default function FinancingSimulator({ property, onRequestFormModal }) {
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#101C30] border-t border-white/10 relative overflow-hidden">
+<<<<<<< Updated upstream
 
+=======
+      
+>>>>>>> Stashed changes
       {/* Background Accent Gradients */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#F28C0F]/10 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
@@ -47,7 +51,11 @@ export default function FinancingSimulator({ property, onRequestFormModal }) {
 
         {/* Interactive Calculator Card */}
         <div className="bg-[#0A1220] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<<<<<<< Updated upstream
 
+=======
+          
+>>>>>>> Stashed changes
           {/* Controls Column */}
           <div className="lg:col-span-7 space-y-8">
 
@@ -128,7 +136,11 @@ export default function FinancingSimulator({ property, onRequestFormModal }) {
 
           {/* Result Highlight Box Column */}
           <div className="lg:col-span-5 bg-gradient-to-b from-[#101C30] to-[#0A1220] border border-[#F28C0F]/30 rounded-2xl p-6 sm:p-8 space-y-6 text-center shadow-xl">
+<<<<<<< Updated upstream
 
+=======
+            
+>>>>>>> Stashed changes
             <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-[#F28C0F]/20 text-[#F28C0F] border border-[#F28C0F]/30">
               Resultado da Simulação
             </span>

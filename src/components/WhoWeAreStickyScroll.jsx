@@ -8,7 +8,11 @@ import assinaturaContrato from "../img/assinatura_contrato.jpg";
 export default function WhoWeAreStickyScroll({ onRequestFormModal }) {
   const { metrics, brand } = VISTAHAVEN_DATA;
 
+<<<<<<< Updated upstream
   // Conteúdo detalhado com os pilares de autoridade da Danielle Galdino e Aurora Imobiliária
+=======
+  // Conteúdo detalhado com os pilares de autoridade do Danielle Galdino e RM Home
+>>>>>>> Stashed changes
   const stickyContent = [
     {
       badge: "Autoridade Habitacional",
@@ -44,7 +48,11 @@ export default function WhoWeAreStickyScroll({ onRequestFormModal }) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#101C30]/90 via-transparent to-transparent flex items-end p-4 sm:p-6">
             <span className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#101C30]/95 px-3.5 py-1.5 rounded-full backdrop-blur-md shadow-lg border border-white/20">
+<<<<<<< Updated upstream
               <Building2 size={14} className="text-[#F28C0F]" /> Parceria Oficial Aurora Imobiliária
+=======
+              <Building2 size={14} className="text-[#F28C0F]" /> Parceria Oficial RM Home
+>>>>>>> Stashed changes
             </span>
           </div>
         </div>

@@ -1,7 +1,7 @@
-// Danielle Galdino - Corretora de Imóveis (CRECI-PE 21525) & Aurora Imobiliária
+// Matheus Ferreira - Corretor de Imóveis (CRECI 20367) & RM Home Imobiliária
 // Dados Oficiais e Conteúdos em Português conforme PRD
 
-import danielleFoto from "../img/danielCorretora.png";
+import matheusFoto from "../img/matheus.jpg";
 import entregaChaves from "../img/entrega_chaves.jpg";
 import assinaturaContrato from "../img/assinatura_contrato.jpg";
 import residencialToledo from "../img/ResidencialToledo.png";
@@ -13,44 +13,33 @@ import privesSaramandaia from "../img/Apartamentoscasasprivês.png";
 
 export const VISTAHAVEN_DATA = {
   brand: {
-    name: "Danielle Galdino",
-    brokerName: "Danielle Galdino",
-    creci: "CRECI-PE 21525",
-    photo: danielleFoto,
-    photoAlt: "Danielle Galdino - Corretora de Imóveis",
-    slogan: "Transformando sonhos em endereços!",
-    partner: "Danielle Galdino Corretora",
-    company: "Aurora Imobiliária",
-    tagline: "CORRETORA DE IMÓVEIS",
-    logoText: "DG",
-    location: "R. Fazendinha, 72, Paulista - PE",
-    address: "R. Fazendinha, 72, Paulista - PE",
-    fullAddress: "R. Fazendinha, 72, Paulista, PE, BR",
-    mapsUrl: "https://maps.google.com/?q=R.+Fazendinha,+72,+Paulista+-+PE",
-    coverageAreas: "Paulista, PE e Região Metropolitana",
-    specialty: "Especialista no programa Minha Casa Minha Vida",
-    ctaSchedule: "Agende sua visita",
+    name: "Matheus Ferreira",
+    brokerName: "Matheus Ferreira",
+    creci: "CRECI 20367",
+    partner: "RM Home Imobiliária",
+    tagline: "CORRETOR DE IMÓVEIS • CRECI 20367",
+    logoText: "MF",
+    location: "Grande Recife - PE",
+    coverageAreas: "Jaboatão dos Guararapes, Paulista, Abreu e Lima e Recife",
+    specialty: "Especialista em Crédito Habitacional e Minha Casa Minha Vida",
     services: "Minha Casa Minha Vida | Financiamento Caixa | Consultoria Habitacional",
-    bio: "Transformando sonhos em endereços! Especialista no programa Minha Casa Minha Vida em Paulista e Região Metropolitana. Agende sua visita.",
-    instagram: "https://www.instagram.com/corretoradaniellegaldino/",
-    instagramPartner: "https://www.instagram.com/auroraimobiliariaoficial?stkn=MTF0Mm9iemZoa2R1cw==",
+    bio: "Mais de 300 famílias com as chaves na mão. Juntos realizamos sonhos! Especialista no programa Minha Casa Minha Vida e crédito imobiliário na Grande Recife em parceria com a RM Home Imobiliária.",
+    instagram: "https://www.instagram.com/matheusferreira.corretor/",
+    instagramPartner: "https://www.instagram.com/rmhomeimobiliaria/",
     whatsappPhone: "5581999999999",
-    whatsapp: "https://api.whatsapp.com/message/U4DSTF6QRBGLI1?autoload=1&app_absent=0&utm_source=ig",
-    whatsappSimulationMessage: "Olá Danielle, vim pelo site e gostaria de agendar uma visita e simular meu financiamento Minha Casa Minha Vida.",
-    whatsappReferralMessage: "Olá Danielle, vim pelo site e quero indicar um amigo para aquisição do imóvel próprio!",
-    whatsappScheduleMessage: "Olá Danielle! Vim pelo site e gostaria de agendar uma visita para conhecer as opções de imóveis.",
-    whatsappConsultancyMessage: "Olá Danielle! Gostaria de uma assessoria para entender o processo de aprovação de crédito e financiamento Caixa.",
-    whatsappGeneralMessage: "Olá Danielle, vim pelo site e gostaria de tirar dúvidas no WhatsApp!"
+    whatsapp: "https://api.whatsapp.com/send?phone=5581999999999",
+    whatsappSimulationMessage: "Olá Matheus, vim pelo site e quero simular o financiamento da minha casa própria.",
+    whatsappReferralMessage: "Olá Matheus, vim pelo site e quero indicar um amigo para o programa Indicou, Ganhou R$ 500 no Pix!"
   },
 
   hero: {
-    badge: "Especialista no programa Minha Casa Minha Vida",
+    badge: "ESPECIALISTA MINHA CASA MINHA VIDA 🔑🏠",
     headlineLine1: "Realize o Sonho da Sua",
     headlineHighlight: "Casa Própria",
-    headlineLine2: "em Paulista e Grande Recife com Segurança",
-    subtext: "Transformando sonhos em endereços! Especialista no programa Minha Casa Minha Vida em Paulista, PE. Agende sua visita.",
+    headlineLine2: "na Grande Recife com Segurança",
+    subtext: "Mais de 300 famílias com as chaves na mão. Juntos realizamos sonhos! (CRECI 20367). Parceria oficial RM Home Imobiliária.",
     ctaPrimary: "Quero Simular Meu Financiamento",
-    ctaSecondary: "Agende sua visita ",
+    ctaSecondary: "Falar com Matheus no WhatsApp",
     smartHomeBadge: {
       title: "Financiamento Minha Casa Minha Vida",
       desc: "Subsídios do governo, use seu FGTS e parcele sua entrada com parcelas que cabem no bolso.",
@@ -325,7 +314,7 @@ export const VISTAHAVEN_DATA = {
       location: "Paulista - PE",
       tag: "Contrato Assinado • Caixa",
       stars: 5,
-      text: "Atendimento nota mil! A Danielle tirou todas as nossas dúvidas com muita paciência e transparência. A parceria dela com a Aurora Imobiliária dá uma segurança gigante. Recomendo de olhos fechados.",
+      text: "Atendimento nota mil! O Matheus tirou todas as nossas dúvidas com muita paciência e transparência. A parceria dele com a RM Home dá uma segurança gigante. Recomendo de olhos fechados.",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
     },
     {

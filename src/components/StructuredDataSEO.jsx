@@ -78,7 +78,10 @@ export default function StructuredDataSEO() {
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
+<<<<<<< Updated upstream
         "streetAddress": "R. Fazendinha, 72",
+=======
+>>>>>>> Stashed changes
         "addressLocality": "Paulista",
         "addressRegion": "PE",
         "addressCountry": "BR"

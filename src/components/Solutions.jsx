@@ -170,6 +170,7 @@ export default function Solutions({ onRequestFormModal }) {
               </p>
             </div>
 
+<<<<<<< Updated upstream
             <a
               href={consultancyWhatsappUrl}
               target="_blank"
@@ -179,6 +180,15 @@ export default function Solutions({ onRequestFormModal }) {
               <span>{solutions.cards.card3.buttonText}</span>
               <ArrowRight size={14} className="text-[#F28C0F] group-hover:translate-x-1 transition-transform" />
             </a>
+=======
+            <button
+              onClick={onRequestFormModal}
+              className="w-full bg-[#101C30] hover:bg-[#0A1220] text-white font-bold py-3 px-4 rounded-full text-xs transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+            >
+              <span>{solutions.cards.card3.buttonText}</span>
+              <ArrowRight size={14} className="text-[#F28C0F]" />
+            </button>
+>>>>>>> Stashed changes
           </div>
 
         </div>
