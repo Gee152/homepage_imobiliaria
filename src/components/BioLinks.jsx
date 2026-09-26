@@ -163,8 +163,8 @@ export default function BioLinks() {
       {/* Card Principal Estilo Mobile Editorial - Preenche 100% da tela no mobile */}
       <div
         className={`w-full max-w-md min-h-screen min-h-[100dvh] sm:min-h-0 sm:h-auto sm:my-auto sm:rounded-[36px] overflow-hidden flex flex-col justify-between transition-all duration-500 relative flex-1 sm:flex-initial ${!isDark
-            ? "bg-white text-[#101C30] shadow-[0_20px_60px_rgba(16,28,48,0.08)] sm:border sm:border-slate-200/80"
-            : "bg-[#0A1220] text-white shadow-[0_25px_70px_rgba(0,0,0,0.85)] sm:border sm:border-white/10"
+          ? "bg-white text-[#101C30] shadow-[0_20px_60px_rgba(16,28,48,0.08)] sm:border sm:border-slate-200/80"
+          : "bg-[#0A1220] text-white shadow-[0_25px_70px_rgba(0,0,0,0.85)] sm:border sm:border-white/10"
           }`}
       >
         {/* Barra Flutuante Superior de Ações (Voltar, Alternar Tema e Compartilhar) */}
@@ -174,8 +174,8 @@ export default function BioLinks() {
             href="/"
             title="Voltar ao Site"
             className={`p-2.5 rounded-full backdrop-blur-md transition-all shadow-md active:scale-95 flex items-center justify-center ${!isDark
-                ? "bg-white/90 hover:bg-white text-[#101C30] border border-slate-200 hover:text-[#F28C0F]"
-                : "bg-white/10 hover:bg-white/20 text-white border border-white/15"
+              ? "bg-white/90 hover:bg-white text-[#101C30] border border-slate-200 hover:text-[#F28C0F]"
+              : "bg-white/10 hover:bg-white/20 text-white border border-white/15"
               }`}
           >
             <Home size={16} />
@@ -186,8 +186,8 @@ export default function BioLinks() {
             <button
               onClick={() => setTheme(isDark ? "light" : "dark")}
               className={`p-2.5 rounded-full backdrop-blur-md transition-all shadow-md active:scale-95 flex items-center justify-center cursor-pointer ${!isDark
-                  ? "bg-white/90 hover:bg-white text-[#101C30] border border-slate-200 hover:text-[#F28C0F]"
-                  : "bg-white/10 hover:bg-white/20 text-amber-300 border border-white/15"
+                ? "bg-white/90 hover:bg-white text-[#101C30] border border-slate-200 hover:text-[#F28C0F]"
+                : "bg-white/10 hover:bg-white/20 text-amber-300 border border-white/15"
                 }`}
               title={!isDark ? "Mudar para Modo Escuro" : "Mudar para Modo Claro"}
             >
@@ -198,8 +198,8 @@ export default function BioLinks() {
             <button
               onClick={handleShare}
               className={`p-2.5 rounded-full backdrop-blur-md transition-all shadow-md active:scale-95 flex items-center justify-center cursor-pointer ${!isDark
-                  ? "bg-white/90 hover:bg-white text-[#101C30] border border-slate-200 hover:text-[#F28C0F]"
-                  : "bg-white/10 hover:bg-white/20 text-white border border-white/15"
+                ? "bg-white/90 hover:bg-white text-[#101C30] border border-slate-200 hover:text-[#F28C0F]"
+                : "bg-white/10 hover:bg-white/20 text-white border border-white/15"
                 }`}
               title="Compartilhar Perfil"
             >
@@ -208,8 +208,8 @@ export default function BioLinks() {
           </div>
         </div>
 
-        {/* 1. TOPO EDITORIAL: FOTO AMPLA DA CORRETORA COM TRANSIÇÃO EM DEGRADÊ SUAVE */}
-        <div className="relative w-full h-[400px] sm:h-[430px] overflow-hidden select-none shrink-0">
+        {/* 1. TOPO EDITORIAL: FOTO AMPLA DA CORRETORA COM TRANSIÇÃO EM DEGRADÊ SUAVE (EXPERIÊNCIA ANTERIOR) */}
+        <div className="relative w-full h-[370px] sm:h-[430px] overflow-hidden select-none shrink-0">
           {/* Foto Profissional da Corretora centralizada e ampla */}
           <img
             src={brand.photo}
@@ -220,19 +220,19 @@ export default function BioLinks() {
 
           {/* Gradiente Inferior de Fade Suave (apenas na base da imagem) */}
           <div
-            className={`absolute inset-x-0 bottom-0 h-48 sm:h-52 pointer-events-none ${!isDark
-                ? "bg-gradient-to-t from-white via-white/80 to-transparent"
-                : "bg-gradient-to-t from-[#0A1220] via-[#0A1220]/80 to-transparent"
+            className={`absolute inset-x-0 bottom-0 h-44 sm:h-52 pointer-events-none ${!isDark
+              ? "bg-gradient-to-t from-white via-white/80 to-transparent"
+              : "bg-gradient-to-t from-[#0A1220] via-[#0A1220]/80 to-transparent"
               }`}
           />
         </div>
 
-        {/* 2. CONTEÚDO PRINCIPAL (IDENTIDADE, LOGO, BOTÕES E LINKS) */}
-        <div className="relative z-10 px-5 sm:px-6 -mt-36 sm:-mt-40 pb-6 flex-1 flex flex-col justify-between">
-          <div className="space-y-4 sm:space-y-4.5">
+        {/* 2. CONTEÚDO PRINCIPAL (IDENTIDADE, LOGO, BOTÕES COMPACTADOS E LINKS) */}
+        <div className="relative z-10 px-4 sm:px-6 -mt-[276px] sm:-mt-[300px] pb-3 sm:pb-6 flex-1 flex flex-col justify-between">
+          <div className="space-y-2.5 sm:space-y-4 my-auto">
             {/* Bloco de Nome e Slogan com Logo Danielle Galdino Centralizado */}
-            <div className="text-center space-y-2 pointer-events-auto">
-              {/* Logo Oficial Centralizada no estilo de assinatura elegante */}
+            <div className="text-center space-y-1.5 sm:space-y-2 pointer-events-auto">
+              {/* Logo Oficial Centralizada */}
               <div className="flex items-center justify-center">
                 <a
                   href="/"
@@ -244,13 +244,14 @@ export default function BioLinks() {
                     showCreci={false}
                     align="center"
                     showRoof={true}
-                    className="scale-[1.15] origin-center py-0.5"
+                    size="sm"
+                    className="origin-center py-0"
                   />
                 </a>
               </div>
 
-              {/* Linha dos 3 Botões Quadrados no Início do Degradê */}
-              <div className="flex items-center justify-center gap-4 sm:gap-4.5 pointer-events-auto shrink-0">
+              {/* Linha dos 3 Botões Principais - Tamanho Ajustado e Reduzido */}
+              <div className="flex items-center justify-center gap-3 sm:gap-4 pointer-events-auto shrink-0 mt-1">
                 {/* Botão 1: Instagram */}
                 <a
                   href={brand.instagram}
@@ -258,12 +259,12 @@ export default function BioLinks() {
                   rel="noreferrer"
                   title="Instagram da Danielle Galdino"
                   aria-label="Instagram da Danielle Galdino"
-                  className={`w-14 h-14 sm:w-15 sm:h-15 rounded-2xl flex items-center justify-center transition-all duration-300 group cursor-pointer shrink-0 ${!isDark
-                      ? "bg-white/95 border-2 border-slate-100 shadow-[0_8px_25px_rgba(16,28,48,0.12)] text-[#101C30] hover:text-[#F28C0F] hover:border-[#F28C0F]/40 hover:shadow-[0_12px_28px_rgba(242,140,15,0.2)] hover:scale-105 active:scale-95"
-                      : "bg-[#101C30]/95 border border-white/10 text-[#F28C0F] shadow-[0_8px_20px_rgba(0,0,0,0.5)] hover:border-[#F28C0F]/50 hover:scale-105 active:scale-95"
+                  className={`w-11 h-11 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-all duration-300 group cursor-pointer shrink-0 ${!isDark
+                    ? "bg-white/95 border-2 border-slate-100 shadow-[0_6px_18px_rgba(16,28,48,0.1)] text-[#101C30] hover:text-[#F28C0F] hover:border-[#F28C0F]/40 hover:shadow-[0_8px_22px_rgba(242,140,15,0.2)] hover:scale-105 active:scale-95"
+                    : "bg-[#101C30]/95 border border-white/10 text-[#F28C0F] shadow-[0_6px_18px_rgba(0,0,0,0.5)] hover:border-[#F28C0F]/50 hover:scale-105 active:scale-95"
                     }`}
                 >
-                  <Instagram size={23} className="transition-transform group-hover:scale-110" />
+                  <Instagram size={20} className="sm:w-[23px] sm:h-[23px] transition-transform group-hover:scale-110" />
                 </a>
 
                 {/* Botão 2: WhatsApp Oficial */}
@@ -273,12 +274,12 @@ export default function BioLinks() {
                   rel="noreferrer"
                   title="Conversar Diretamente no WhatsApp"
                   aria-label="Conversar Diretamente no WhatsApp"
-                  className={`w-14 h-14 sm:w-15 sm:h-15 rounded-2xl flex items-center justify-center transition-all duration-300 group cursor-pointer shrink-0 ${!isDark
-                      ? "bg-white/95 border-2 border-[#25D366]/40 shadow-[0_8px_25px_rgba(37,211,102,0.22)] text-[#25D366] hover:bg-[#25D366] hover:text-white hover:border-[#25D366] hover:shadow-[0_12px_28px_rgba(37,211,102,0.35)] hover:scale-105 active:scale-95"
-                      : "bg-[#101C30]/95 border border-[#25D366]/40 text-[#25D366] shadow-[0_8px_20px_rgba(0,0,0,0.5)] hover:bg-[#25D366] hover:text-white hover:border-[#25D366] hover:shadow-[0_12px_28px_rgba(37,211,102,0.35)] hover:scale-105 active:scale-95"
+                  className={`w-11 h-11 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-all duration-300 group cursor-pointer shrink-0 ${!isDark
+                    ? "bg-white/95 border-2 border-[#25D366]/40 shadow-[0_6px_18px_rgba(37,211,102,0.2)] text-[#25D366] hover:bg-[#25D366] hover:text-white hover:border-[#25D366] hover:shadow-[0_8px_22px_rgba(37,211,102,0.35)] hover:scale-105 active:scale-95"
+                    : "bg-[#101C30]/95 border border-[#25D366]/40 text-[#25D366] shadow-[0_6px_18px_rgba(0,0,0,0.5)] hover:bg-[#25D366] hover:text-white hover:border-[#25D366] hover:shadow-[0_8px_22px_rgba(37,211,102,0.35)] hover:scale-105 active:scale-95"
                     }`}
                 >
-                  <WhatsAppIcon size={25} className="transition-transform group-hover:scale-110" />
+                  <WhatsAppIcon size={22} className="sm:w-[25px] sm:h-[25px] transition-transform group-hover:scale-110" />
                 </a>
 
                 {/* Botão 3: Localização / Endereço Oficial */}
@@ -288,18 +289,18 @@ export default function BioLinks() {
                   rel="noreferrer"
                   title={`Localização: ${brand.address || "R. Fazendinha, 72, Paulista - PE"}`}
                   aria-label={`Localização: ${brand.address || "R. Fazendinha, 72, Paulista - PE"}`}
-                  className={`w-14 h-14 sm:w-15 sm:h-15 rounded-2xl flex items-center justify-center transition-all duration-300 group cursor-pointer shrink-0 ${!isDark
-                      ? "bg-white/95 border-2 border-slate-100 shadow-[0_8px_25px_rgba(16,28,48,0.12)] text-[#101C30] hover:text-[#F28C0F] hover:border-[#F28C0F]/40 hover:shadow-[0_12px_28px_rgba(242,140,15,0.2)] hover:scale-105 active:scale-95"
-                      : "bg-[#101C30]/95 border border-white/10 text-[#F28C0F] shadow-[0_8px_20px_rgba(0,0,0,0.5)] hover:border-[#F28C0F]/50 hover:scale-105 active:scale-95"
+                  className={`w-11 h-11 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-all duration-300 group cursor-pointer shrink-0 ${!isDark
+                    ? "bg-white/95 border-2 border-slate-100 shadow-[0_6px_18px_rgba(16,28,48,0.1)] text-[#101C30] hover:text-[#F28C0F] hover:border-[#F28C0F]/40 hover:shadow-[0_8px_22px_rgba(242,140,15,0.2)] hover:scale-105 active:scale-95"
+                    : "bg-[#101C30]/95 border border-white/10 text-[#F28C0F] shadow-[0_6px_18px_rgba(0,0,0,0.5)] hover:border-[#F28C0F]/50 hover:scale-105 active:scale-95"
                     }`}
                 >
-                  <MapPin size={23} className="transition-transform group-hover:scale-110" />
+                  <MapPin size={20} className="sm:w-[23px] sm:h-[23px] transition-transform group-hover:scale-110" />
                 </a>
               </div>
             </div>
 
-            {/* Container dos Cards de Link com Dimensões Padronizadas e Espaçamento Consistente */}
-            <div className="w-full space-y-3.5 sm:space-y-4">
+            {/* Container dos Cards de Link com Dimensões Reduzidas e Compactas */}
+            <div className="w-full space-y-2 sm:space-y-3 mt-1 sm:mt-2">
               {links.map((link) => {
                 const Icon = link.icon;
                 const isGreen = link.badgeType === "green";
@@ -307,42 +308,42 @@ export default function BioLinks() {
                 const Component = isClickableModal ? "button" : "a";
                 const componentProps = isClickableModal
                   ? {
-                      type: "button",
-                      onClick: link.onClick,
-                    }
+                    type: "button",
+                    onClick: link.onClick,
+                  }
                   : {
-                      href: link.href,
-                      target: link.href?.startsWith("http") ? "_blank" : "_self",
-                      rel: "noreferrer",
-                    };
+                    href: link.href,
+                    target: link.href?.startsWith("http") ? "_blank" : "_self",
+                    rel: "noreferrer",
+                  };
 
                 return (
                   <Component
                     key={link.id}
                     {...componentProps}
-                    className={`w-full p-4 sm:p-4.5 min-h-[76px] sm:min-h-[80px] rounded-2xl flex items-center justify-between transition-all duration-300 group cursor-pointer text-left ${!isDark
-                        ? "bg-white hover:bg-slate-50 border border-slate-200/90 hover:border-[#F28C0F]/60 shadow-[0_4px_18px_rgba(16,28,48,0.06)] hover:shadow-[0_8px_24px_rgba(242,140,15,0.14)] hover:scale-[1.01]"
-                        : "bg-[#101C30]/90 hover:bg-[#162540] border border-white/10 hover:border-[#F28C0F]/50 shadow-lg hover:shadow-xl hover:scale-[1.01]"
+                    className={`w-full p-2.5 sm:p-4 min-h-[52px] sm:min-h-[72px] rounded-2xl flex items-center justify-between transition-all duration-300 group cursor-pointer text-left ${!isDark
+                      ? "bg-white hover:bg-slate-50 border border-slate-200/90 hover:border-[#F28C0F]/60 shadow-[0_3px_12px_rgba(16,28,48,0.05)] hover:shadow-[0_6px_20px_rgba(242,140,15,0.12)] hover:scale-[1.01]"
+                      : "bg-[#101C30]/90 hover:bg-[#162540] border border-white/10 hover:border-[#F28C0F]/50 shadow-md hover:shadow-lg hover:scale-[1.01]"
                       }`}
                   >
-                    <div className="flex items-center gap-3.5 sm:gap-4 text-left min-w-0 flex-1">
+                    <div className="flex items-center gap-2.5 sm:gap-4 text-left min-w-0 flex-1">
                       <div
-                        className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-all ${!isDark
-                            ? isGreen
-                              ? "bg-emerald-50 text-[#16a34a] group-hover:scale-110"
-                              : "bg-orange-50 text-[#F28C0F] group-hover:bg-[#F28C0F] group-hover:text-white group-hover:scale-110"
-                            : "bg-white/10 text-[#F28C0F] group-hover:scale-110"
+                        className={`w-9 h-9 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shrink-0 transition-all ${!isDark
+                          ? isGreen
+                            ? "bg-emerald-50 text-[#16a34a] group-hover:scale-110"
+                            : "bg-orange-50 text-[#F28C0F] group-hover:bg-[#F28C0F] group-hover:text-white group-hover:scale-110"
+                          : "bg-white/10 text-[#F28C0F] group-hover:scale-110"
                           }`}
                       >
-                        <Icon size={22} />
+                        <Icon size={18} className="sm:w-[22px] sm:h-[22px]" />
                       </div>
 
                       <div className="min-w-0 flex-1">
-                        <div className="flex items-center gap-2 flex-wrap">
+                        <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
                           <span
-                            className={`text-[14.5px] sm:text-[15.5px] font-bold transition-colors ${!isDark
-                                ? "text-[#101C30] group-hover:text-[#F28C0F]"
-                                : "text-white group-hover:text-[#F28C0F]"
+                            className={`text-[13px] sm:text-[15px] font-bold transition-colors leading-tight ${!isDark
+                              ? "text-[#101C30] group-hover:text-[#F28C0F]"
+                              : "text-white group-hover:text-[#F28C0F]"
                               }`}
                           >
                             {link.name}
@@ -350,13 +351,13 @@ export default function BioLinks() {
 
                           {link.badge && (
                             <span
-                              className={`text-[9.5px] sm:text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider shrink-0 ${!isDark
-                                  ? isGreen
-                                    ? "bg-emerald-50 text-[#16a34a] border border-emerald-200"
-                                    : "bg-orange-50 text-[#F28C0F] border border-orange-200"
-                                  : isGreen
-                                    ? "bg-emerald-500/20 text-[#6FC34B] border border-emerald-500/30"
-                                    : "bg-[#F28C0F]/20 text-[#F28C0F] border border-[#F28C0F]/30"
+                              className={`text-[8px] sm:text-[9.5px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider shrink-0 leading-none ${!isDark
+                                ? isGreen
+                                  ? "bg-emerald-50 text-[#16a34a] border border-emerald-200"
+                                  : "bg-orange-50 text-[#F28C0F] border border-orange-200"
+                                : isGreen
+                                  ? "bg-emerald-500/20 text-[#6FC34B] border border-emerald-500/30"
+                                  : "bg-[#F28C0F]/20 text-[#F28C0F] border border-[#F28C0F]/30"
                                 }`}
                             >
                               {link.badge}
@@ -365,7 +366,7 @@ export default function BioLinks() {
                         </div>
 
                         <span
-                          className={`text-xs sm:text-[13px] block leading-snug mt-0.5 truncate ${!isDark ? "text-slate-500" : "text-slate-300"
+                          className={`text-[10.5px] sm:text-[12.5px] block leading-tight mt-0.5 truncate ${!isDark ? "text-slate-500" : "text-slate-300"
                             }`}
                         >
                           {link.actionText}
@@ -374,10 +375,10 @@ export default function BioLinks() {
                     </div>
 
                     <ChevronRight
-                      size={19}
-                      className={`transition-all group-hover:translate-x-1 shrink-0 ml-2 ${!isDark
-                          ? "text-slate-400 group-hover:text-[#F28C0F]"
-                          : "text-slate-400 group-hover:text-white"
+                      size={16}
+                      className={`transition-all group-hover:translate-x-1 shrink-0 ml-1.5 sm:ml-2 ${!isDark
+                        ? "text-slate-400 group-hover:text-[#F28C0F]"
+                        : "text-slate-400 group-hover:text-white"
                         }`}
                     />
                   </Component>
@@ -387,15 +388,15 @@ export default function BioLinks() {
           </div>
         </div>
 
-        {/* 4. FOOTER DO BIOLINKS */}
+        {/* 4. FOOTER DO BIOLINKS COMPACTO */}
         <footer
-          className={`w-full text-center py-5 sm:py-6 text-[11px] space-y-1 transition-colors border-t shrink-0 mt-auto ${!isDark
-              ? "border-slate-100 text-slate-500"
-              : "border-white/10 text-slate-400"
+          className={`w-full text-center py-2 sm:py-4 text-[9.5px] sm:text-[11px] space-y-0.5 transition-colors border-t shrink-0 mt-auto ${!isDark
+            ? "border-slate-100 text-slate-500 bg-white"
+            : "border-white/10 text-slate-400 bg-[#0A1220]"
             }`}
         >
-          <p>© {new Date().getFullYear()} {brand.brokerName} • {brand.creci}</p>
-          <p className="text-[10px] opacity-75">{brand.slogan}</p>
+          <p className="font-semibold">© {new Date().getFullYear()} {brand.brokerName} • {brand.creci}</p>
+          <p className="text-[8.5px] sm:text-[10px] opacity-75">{brand.slogan}</p>
         </footer>
       </div>
 
@@ -415,8 +416,8 @@ export default function BioLinks() {
         >
           <div
             className={`relative w-full max-w-md my-auto rounded-[32px] overflow-hidden shadow-2xl border flex flex-col max-h-[92vh] transition-all duration-300 ${!isDark
-                ? "bg-white border-slate-200 text-[#101C30]"
-                : "bg-[#0A1220] border-white/15 text-white"
+              ? "bg-white border-slate-200 text-[#101C30]"
+              : "bg-[#0A1220] border-white/15 text-white"
               }`}
           >
             {/* Header do Modal com Contador e Botão Fechar */}
@@ -448,8 +449,8 @@ export default function BioLinks() {
                 onClick={() => setIsCatalogModalOpen(false)}
                 aria-label="Fechar catálogo"
                 className={`w-9 h-9 rounded-full flex items-center justify-center transition-all cursor-pointer ${!isDark
-                    ? "bg-white hover:bg-slate-200 text-slate-700 shadow-sm border border-slate-200"
-                    : "bg-white/10 hover:bg-white/20 text-white border border-white/15"
+                  ? "bg-white hover:bg-slate-200 text-slate-700 shadow-sm border border-slate-200"
+                  : "bg-white/10 hover:bg-white/20 text-white border border-white/15"
                   }`}
               >
                 <X size={18} />
@@ -610,10 +611,10 @@ export default function BioLinks() {
                     onClick={() => setActiveSlide(idx)}
                     aria-label={`Ir para imóvel ${idx + 1}`}
                     className={`transition-all rounded-full cursor-pointer ${activeSlide === idx
-                        ? "w-6 h-2 bg-[#F28C0F]"
-                        : !isDark
-                          ? "w-2 h-2 bg-slate-300 hover:bg-slate-400"
-                          : "w-2 h-2 bg-white/30 hover:bg-white/50"
+                      ? "w-6 h-2 bg-[#F28C0F]"
+                      : !isDark
+                        ? "w-2 h-2 bg-slate-300 hover:bg-slate-400"
+                        : "w-2 h-2 bg-white/30 hover:bg-white/50"
                       }`}
                   />
                 ))}

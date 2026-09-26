@@ -16,13 +16,27 @@ export default function WhoWeAreStickyScroll({ onRequestFormModal }) {
       description:
         "Mais de 300 sonhos realizados na Grande Recife. Atendimento humanizado, transparente e focado em encontrar a melhor oportunidade para você sair de vez do aluguel com parcelas menores do que imagina.",
       content: (
-        <div className="relative h-full w-full overflow-hidden group bg-[#101C30] flex items-center justify-center">
+        <div className="relative h-full w-full overflow-hidden group bg-[#0A1220] flex items-center justify-center">
+          {/* Fundo ambiente com desfoque cinematográfico preenchendo as laterais */}
+          <img
+            src={brand.photo}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover blur-2xl scale-125 opacity-40 pointer-events-none"
+          />
+
+          {/* Vinheta suave nas bordas para acabamento luxuoso */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A1220] via-transparent to-[#0A1220]/40 pointer-events-none z-10" />
+
+          {/* Foto principal sem corte excessivo, exibindo a imagem completa e nítida */}
           <img
             src={brand.photo}
             alt={brand.photoAlt}
-            className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+            className="relative z-10 h-full w-auto max-w-full object-contain mx-auto drop-shadow-[0_15px_35px_rgba(0,0,0,0.7)] transition-transform duration-700 group-hover:scale-[1.02]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#101C30]/90 via-transparent to-transparent flex items-end p-4 sm:p-6">
+
+          {/* Selo oficial CRECI e Danielle Galdino na base */}
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0A1220] via-[#0A1220]/75 to-transparent flex items-end p-4 sm:p-6 z-20">
             <span className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#101C30]/95 px-3.5 py-1.5 rounded-full backdrop-blur-md shadow-lg border border-[#F28C0F]/40">
               <Award size={14} className="text-[#F28C0F]" /> {brand.brokerName} • {brand.creci}
             </span>

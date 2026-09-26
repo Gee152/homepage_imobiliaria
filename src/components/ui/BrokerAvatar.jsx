@@ -22,9 +22,9 @@ export default function BrokerAvatar({
 }) {
   const sizeMap = {
     hero: {
-      avatarClass: "w-48 h-48 sm:w-64 sm:h-64 p-2 sm:p-2.5",
-      badgeClass: "text-xs sm:text-sm px-4 sm:px-5 py-1.5 sm:py-2 -bottom-3.5 sm:-bottom-4",
-      iconSize: 16
+      avatarClass: "w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-52 lg:h-52 p-1.5 sm:p-2",
+      badgeClass: "text-[10px] sm:text-xs px-3.5 sm:px-4 py-1 -bottom-3 sm:-bottom-3.5",
+      iconSize: 14
     },
     bio: {
       avatarClass: "w-36 h-36 sm:w-44 sm:h-44 p-1.5 sm:p-2",
