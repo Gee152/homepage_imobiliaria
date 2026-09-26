@@ -1,4 +1,3 @@
-import React from "react";
 import { CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { VISTAHAVEN_DATA } from "@/data/propertyData";
