@@ -8,7 +8,7 @@ import {
   Building2
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { VISTAHAVEN_DATA } from "@/data/propertyData";
+import { VISTAHAVEN_DATA, getWhatsAppUrl } from "@/data/propertyData";
 
 const DEFAULT_SOCIALS = [
   {
@@ -18,15 +18,15 @@ const DEFAULT_SOCIALS = [
     label: "@daniellegaldino.corretora"
   },
   {
-    name: VISTAHAVEN_DATA.brand.company || "RM Home Imobiliária",
+    name: VISTAHAVEN_DATA.brand.company || "Aurora Imobiliária",
     icon: Building2,
     href: VISTAHAVEN_DATA.brand.instagramPartner,
-    label: "@rmhomeimobiliaria"
+    label: "@auroraimobiliariaoficial"
   },
   {
     name: "WhatsApp",
     icon: MessageCircle,
-    href: `${VISTAHAVEN_DATA.brand.whatsapp}&text=${encodeURIComponent(VISTAHAVEN_DATA.brand.whatsappSimulationMessage)}`,
+    href: getWhatsAppUrl("Olá Danielle! Vim pelo site e gostaria de falar com você no WhatsApp."),
     label: "Falar no WhatsApp"
   },
   {

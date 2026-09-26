@@ -1,9 +1,13 @@
 import React from 'react';
-import { UserCheck, FileCheck, Key, ShieldCheck, ArrowRight, CheckCircle2 } from 'lucide-react';
-import { VISTAHAVEN_DATA } from '../data/propertyData';
+import { UserCheck, FileCheck, Key, ShieldCheck, ArrowRight, CheckCircle2, MessageSquare } from 'lucide-react';
+import { VISTAHAVEN_DATA, getWhatsAppUrl } from '../data/propertyData';
 
 export default function Solutions({ onRequestFormModal }) {
   const { solutions } = VISTAHAVEN_DATA;
+  const consultancyWhatsappUrl = getWhatsAppUrl(
+    VISTAHAVEN_DATA.brand.whatsappConsultancyMessage ||
+    "Olá Danielle! Gostaria de uma assessoria para entender o processo de aprovação de crédito e financiamento Caixa."
+  );
 
   return (
     <section id="services" className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white border-b border-slate-200/80">
@@ -166,13 +170,15 @@ export default function Solutions({ onRequestFormModal }) {
               </p>
             </div>
 
-            <button
-              onClick={onRequestFormModal}
-              className="w-full bg-[#101C30] hover:bg-[#0A1220] text-white font-bold py-3 px-4 rounded-full text-xs transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+            <a
+              href={consultancyWhatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-[#101C30] hover:bg-[#0A1220] text-white font-bold py-3 px-4 rounded-full text-xs transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95 group"
             >
               <span>{solutions.cards.card3.buttonText}</span>
-              <ArrowRight size={14} className="text-[#F28C0F]" />
-            </button>
+              <ArrowRight size={14} className="text-[#F28C0F] group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
 
         </div>

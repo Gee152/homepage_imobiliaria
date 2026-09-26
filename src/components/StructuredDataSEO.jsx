@@ -39,10 +39,10 @@ export default function StructuredDataSEO() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": prop.geo.latitude,
-          "longitude": prop.geo.longitude
+          "latitude": prop.geo?.latitude || -7.9408,
+          "longitude": prop.geo?.longitude || -34.8728
         },
-        "amenityFeature": prop.amenities.map((amenity) => ({
+        "amenityFeature": (prop.amenities || []).map((amenity) => ({
           "@type": "LocationFeatureSpecification",
           "name": amenity,
           "value": true
@@ -78,6 +78,7 @@ export default function StructuredDataSEO() {
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "R. Fazendinha, 72",
         "addressLocality": "Paulista",
         "addressRegion": "PE",
         "addressCountry": "BR"

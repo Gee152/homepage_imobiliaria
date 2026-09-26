@@ -15,7 +15,11 @@ export default function BrokerAvatar({
   badgeText = VISTAHAVEN_DATA.brand.creci,
   src = VISTAHAVEN_DATA.brand.photo,
   alt = VISTAHAVEN_DATA.brand.photoAlt,
-  className = ""
+  className = "",
+  imgClassName = "",
+  imgPosition = "54% 14%",
+  imgScale = 0.94,
+  enableBokeh = true
 }) {
   const sizeMap = {
     hero: {
@@ -51,11 +55,33 @@ export default function BrokerAvatar({
           currentSize.avatarClass
         )}
       >
-        <img
-          src={src}
-          alt={alt}
-          className="w-full h-full object-cover rounded-full object-top shadow-inner"
-        />
+        <div className="relative w-full h-full rounded-full overflow-hidden bg-[#181d24]">
+          {/* Camada de fundo ambiente (bokeh) que harmoniza o preenchimento da moldura circular */}
+          {enableBokeh && (
+            <img
+              src={src}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover blur-md scale-125 opacity-70 pointer-events-none"
+            />
+          )}
+
+          {/* Foto principal com enquadre profissional (mais respiro e proporção harmônica) */}
+          <img
+            src={src}
+            alt={alt}
+            className={cn(
+              "relative z-10 w-full h-full object-cover shadow-inner transition-transform duration-500",
+              imgClassName
+            )}
+            style={{
+              objectPosition: imgPosition,
+              transform: `scale(${imgScale})`,
+              maskImage: "radial-gradient(ellipse 92% 92% at 50% 50%, black 75%, transparent 100%)",
+              WebkitMaskImage: "radial-gradient(ellipse 92% 92% at 50% 50%, black 75%, transparent 100%)"
+            }}
+          />
+        </div>
       </div>
 
       {/* Selo / Badge Oficial CRECI */}

@@ -110,7 +110,7 @@ export default function IndicouGanhou({ onRequestFormModal }) {
             <CheckCircle size={14} className="text-[#6FC34B]" /> Pagamento direto via Pix
           </span>
           <span className="flex items-center gap-1.5">
-            <CheckCircle size={14} className="text-[#6FC34B]" /> Garantia {brand.brokerName} & {brand.company || "RM Home"}
+            <CheckCircle size={14} className="text-[#6FC34B]" /> Garantia {brand.brokerName} & {brand.company || "Aurora Imobiliária"}
           </span>
         </div>
 

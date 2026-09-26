@@ -14,6 +14,7 @@ export default function LogoEduarda({
   name = VISTAHAVEN_DATA.brand.name,
   role = "CORRETORA DE IMÓVEIS",
   creci,
+  showCreci = true,
   align = "center",
   renderMode = "svg",
   onClick
@@ -30,6 +31,7 @@ export default function LogoEduarda({
       name={name}
       role={role}
       creci={computedCreci}
+      showCreci={showCreci}
       align={align}
       renderMode={renderMode}
       onClick={onClick}

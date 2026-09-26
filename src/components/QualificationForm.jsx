@@ -12,7 +12,7 @@ export default function QualificationForm({ onLeadCaptured, isModal = false, onC
     name: '',
     whatsapp: '',
     city: 'Jaboatão dos Guararapes',
-    incomeBracket: 'R$ 2.640 a R$ 4.400 (Faixa 2 MCMV)',
+    incomeBracket: 'R$ 2.640 a R$ 4.400 (Faixa 2 )',
     hasFgts: 'Sim, tenho saldo de FGTS',
     housingStatus: 'Moro de Aluguel'
   });
@@ -199,8 +199,8 @@ export default function QualificationForm({ onLeadCaptured, isModal = false, onC
                     className="w-full bg-slate-50 border border-slate-200 focus:border-[#F28C0F] focus:bg-white rounded-xl px-4 py-3 text-slate-900 text-sm outline-none transition-all cursor-pointer"
                   >
                     <option value="Até R$ 2.640 (Faixa 1 - Maior Subsídio)">Até R$ 2.640 (Maior Subsídio)</option>
-                    <option value="R$ 2.640 a R$ 4.400 (Faixa 2 MCMV)">R$ 2.640 a R$ 4.400 (Faixa 2)</option>
-                    <option value="R$ 4.400 a R$ 8.000 (Faixa 3 MCMV)">R$ 4.400 a R$ 8.000 (Faixa 3)</option>
+                    <option value="R$ 2.640 a R$ 4.400 (Faixa 2 )">R$ 2.640 a R$ 4.400 (Faixa 2)</option>
+                    <option value="R$ 4.400 a R$ 8.000 (Faixa 3 )">R$ 4.400 a R$ 8.000 (Faixa 3)</option>
                     <option value="Acima de R$ 8.000">Acima de R$ 8.000</option>
                   </select>
                 </div>

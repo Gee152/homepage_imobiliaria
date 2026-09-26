@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { VISTAHAVEN_DATA } from '../data/propertyData';
+import { VISTAHAVEN_DATA, getWhatsAppUrl } from '../data/propertyData';
 
 export default function FloatingWhatsApp() {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,8 +22,8 @@ export default function FloatingWhatsApp() {
     };
   }, []);
 
-  const defaultMessage = VISTAHAVEN_DATA.brand.whatsappSimulationMessage || "Olá Danielle, vim pelo site e gostaria de agendar uma visita e simular meu financiamento Minha Casa Minha Vida.";
-  const whatsappUrl = `${VISTAHAVEN_DATA.brand.whatsapp}&text=${encodeURIComponent(defaultMessage)}`;
+  const defaultMessage = "Olá Danielle! Estou navegando no seu site e gostaria de tirar algumas dúvidas sobre os imóveis Minha Casa Minha Vida.";
+  const whatsappUrl = getWhatsAppUrl(defaultMessage);
 
   const handleClick = () => {
     if (window.fbq) {

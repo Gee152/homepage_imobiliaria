@@ -86,7 +86,7 @@ export default function SocialProof({ onRequestFormModal }) {
               Caixa Econômica Federal (Minha Casa Minha Vida)
             </span>
             <span className="px-4 py-2 bg-[#F8F8F8] border border-slate-200 rounded-xl text-[#101C30]">
-              RM Home Imobiliária (Parceria Oficial)
+              Aurora Imobiliária (Parceria Oficial)
             </span>
             <span className="px-4 py-2 bg-[#F8F8F8] border border-slate-200 rounded-xl text-[#101C30]">
               Banco do Brasil

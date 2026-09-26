@@ -73,10 +73,10 @@ export default function Header({ onRequestFormModal }) {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out ${showMobileHeader
-        ? 'translate-y-0 opacity-100 pointer-events-auto'
-        : showDesktopHeader
-          ? 'max-sm:-translate-y-full max-sm:opacity-0 max-sm:pointer-events-none sm:translate-y-0 sm:opacity-100 sm:pointer-events-auto'
-          : '-translate-y-full opacity-0 pointer-events-none'
+      ? 'translate-y-0 opacity-100 pointer-events-auto'
+      : showDesktopHeader
+        ? 'max-sm:-translate-y-full max-sm:opacity-0 max-sm:pointer-events-none sm:translate-y-0 sm:opacity-100 sm:pointer-events-auto'
+        : '-translate-y-full opacity-0 pointer-events-none'
       } ${isScrolled
         ? 'bg-white/95 backdrop-blur-md shadow-md shadow-[#101C30]/5 border-b border-slate-200/80 py-0'
         : 'bg-white/90 backdrop-blur-sm border-b border-slate-100/80'
@@ -89,7 +89,7 @@ export default function Header({ onRequestFormModal }) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
 
-        {/* Brand Logo Oficial Danielle Galdino & RM Home */}
+        {/* Brand Logo Oficial Danielle Galdino & Aurora Imobiliária */}
         <LogoEduarda
           variant="dark"
           onClick={(e) => handleNavClick(e, '#home')}
@@ -101,8 +101,8 @@ export default function Header({ onRequestFormModal }) {
             href="#home"
             onClick={(e) => handleNavClick(e, '#home')}
             className={`transition-all py-1 relative ${activeSection === 'home'
-                ? 'text-[#101C30] font-bold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#F28C0F] after:rounded-full'
-                : 'hover:text-[#F28C0F]'
+              ? 'text-[#101C30] font-bold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#F28C0F] after:rounded-full'
+              : 'hover:text-[#F28C0F]'
               }`}
           >
             Início
@@ -111,8 +111,8 @@ export default function Header({ onRequestFormModal }) {
             href="#who-we-are"
             onClick={(e) => handleNavClick(e, '#who-we-are')}
             className={`transition-all py-1 relative ${activeSection === 'who-we-are'
-                ? 'text-[#101C30] font-bold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#F28C0F] after:rounded-full'
-                : 'hover:text-[#F28C0F]'
+              ? 'text-[#101C30] font-bold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#F28C0F] after:rounded-full'
+              : 'hover:text-[#F28C0F]'
               }`}
           >
             Sobre
@@ -121,8 +121,8 @@ export default function Header({ onRequestFormModal }) {
             href="#services"
             onClick={(e) => handleNavClick(e, '#services')}
             className={`transition-all py-1 relative ${activeSection === 'services'
-                ? 'text-[#101C30] font-bold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#F28C0F] after:rounded-full'
-                : 'hover:text-[#F28C0F]'
+              ? 'text-[#101C30] font-bold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#F28C0F] after:rounded-full'
+              : 'hover:text-[#F28C0F]'
               }`}
           >
             Como Funciona
@@ -131,8 +131,8 @@ export default function Header({ onRequestFormModal }) {
             href="#properties"
             onClick={(e) => handleNavClick(e, '#properties')}
             className={`transition-all py-1 relative ${activeSection === 'properties'
-                ? 'text-[#101C30] font-bold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#F28C0F] after:rounded-full'
-                : 'hover:text-[#F28C0F]'
+              ? 'text-[#101C30] font-bold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#F28C0F] after:rounded-full'
+              : 'hover:text-[#F28C0F]'
               }`}
           >
             Imóveis
@@ -203,7 +203,7 @@ export default function Header({ onRequestFormModal }) {
             onClick={(e) => handleNavClick(e, '#properties')}
             className="block text-sm font-semibold text-slate-700 hover:text-[#F28C0F] py-2 border-b border-slate-100"
           >
-            Imóveis MCMV
+            Imóveis
           </a>
           {/* Link mobile para Indicou Ganhou comentado temporariamente
           <a

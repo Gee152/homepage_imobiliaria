@@ -8,7 +8,7 @@ import assinaturaContrato from "../img/assinatura_contrato.jpg";
 export default function WhoWeAreStickyScroll({ onRequestFormModal }) {
   const { metrics, brand } = VISTAHAVEN_DATA;
 
-  // Conteúdo detalhado com os pilares de autoridade do Danielle Galdino e RM Home
+  // Conteúdo detalhado com os pilares de autoridade da Danielle Galdino e Aurora Imobiliária
   const stickyContent = [
     {
       badge: "Autoridade Habitacional",
@@ -32,19 +32,19 @@ export default function WhoWeAreStickyScroll({ onRequestFormModal }) {
     },
     {
       badge: "Parceria Estratégica",
-      title: "Solidez e Confiança com a RM Home Imobiliária",
+      title: "Solidez e Confiança com a Aurora Imobiliária",
       description:
-        "Parceria oficial com a RM Home Imobiliária. Mais de 300 famílias atendidas com assessoria documental completa, contratos verificados e total tranquilidade jurídica do primeiro contato à entrega.",
+        "Parceria oficial com a Aurora Imobiliária. Mais de 300 famílias atendidas com assessoria documental completa, contratos verificados e total tranquilidade jurídica do primeiro contato à entrega.",
       content: (
         <div className="relative h-full w-full overflow-hidden group">
           <img
             src={assinaturaContrato}
-            alt="Parceria RM Home Imobiliária"
+            alt="Parceria Aurora Imobiliária"
             className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#101C30]/90 via-transparent to-transparent flex items-end p-4 sm:p-6">
             <span className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#101C30]/95 px-3.5 py-1.5 rounded-full backdrop-blur-md shadow-lg border border-white/20">
-              <Building2 size={14} className="text-[#F28C0F]" /> Parceria Oficial RM Home
+              <Building2 size={14} className="text-[#F28C0F]" /> Parceria Oficial Aurora Imobiliária
             </span>
           </div>
         </div>

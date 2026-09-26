@@ -4,7 +4,7 @@ import { Calculator, DollarSign, HelpCircle, ShieldCheck, Sparkles, ArrowRight, 
 export default function FinancingSimulator({ property, onRequestFormModal }) {
   // Parsing numeric base value from string
   const basePriceNum = parseInt(property.priceFrom.replace(/\D/g, '')) || 350000;
-  
+
   const [propertyValue, setPropertyValue] = useState(basePriceNum);
   const [downpaymentPct, setDownpaymentPct] = useState(property.financingInfo.minDownpaymentPct);
   const [termYears, setTermYears] = useState(30);
@@ -12,9 +12,9 @@ export default function FinancingSimulator({ property, onRequestFormModal }) {
   // Calculation Logic (PMT approximation: SAC / PRICE formula)
   const downpaymentVal = propertyValue * (downpaymentPct / 100);
   const loanVal = propertyValue - downpaymentVal;
-  
+
   // Rate assumption (~8.5% a 9.9% a.a.)
-  const annualRate = property.id === 'mcmv' ? 0.055 : 0.095;
+  const annualRate = property.id === '' ? 0.055 : 0.095;
   const monthlyRate = annualRate / 12;
   const totalMonths = termYears * 12;
 
@@ -25,13 +25,13 @@ export default function FinancingSimulator({ property, onRequestFormModal }) {
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#101C30] border-t border-white/10 relative overflow-hidden">
-      
+
       {/* Background Accent Gradients */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#F28C0F]/10 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto space-y-12 relative z-10">
-        
+
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#F28C0F]/10 text-[#F28C0F] border border-[#F28C0F]/30">
@@ -47,10 +47,10 @@ export default function FinancingSimulator({ property, onRequestFormModal }) {
 
         {/* Interactive Calculator Card */}
         <div className="bg-[#0A1220] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
+
           {/* Controls Column */}
           <div className="lg:col-span-7 space-y-8">
-            
+
             {/* Range 1: Property Value */}
             <div className="space-y-3">
               <div className="flex justify-between items-center text-sm font-semibold">
@@ -128,7 +128,7 @@ export default function FinancingSimulator({ property, onRequestFormModal }) {
 
           {/* Result Highlight Box Column */}
           <div className="lg:col-span-5 bg-gradient-to-b from-[#101C30] to-[#0A1220] border border-[#F28C0F]/30 rounded-2xl p-6 sm:p-8 space-y-6 text-center shadow-xl">
-            
+
             <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-[#F28C0F]/20 text-[#F28C0F] border border-[#F28C0F]/30">
               Resultado da Simulação
             </span>
