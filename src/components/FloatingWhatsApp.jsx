@@ -22,13 +22,8 @@ export default function FloatingWhatsApp() {
     };
   }, []);
 
-<<<<<<< Updated upstream
   const defaultMessage = "Olá Danielle! Estou navegando no seu site e gostaria de tirar algumas dúvidas sobre os imóveis Minha Casa Minha Vida.";
   const whatsappUrl = getWhatsAppUrl(defaultMessage);
-=======
-  const defaultMessage = VISTAHAVEN_DATA.brand.whatsappSimulationMessage || "Olá Danielle, vim pelo site e gostaria de agendar uma visita e simular meu financiamento Minha Casa Minha Vida.";
-  const whatsappUrl = `${VISTAHAVEN_DATA.brand.whatsapp}&text=${encodeURIComponent(defaultMessage)}`;
->>>>>>> Stashed changes
 
   const handleClick = () => {
     if (window.fbq) {

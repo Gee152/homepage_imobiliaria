@@ -196,20 +196,31 @@ export default function App() {
                     {VISTAHAVEN_DATA.brand.slogan}
                   </span>
                 </div>
-                <span className="text-[12px] text-slate-300 block leading-relaxed">
-                  📍 {VISTAHAVEN_DATA.brand.coverageAreas}
+                <a
+                  href={VISTAHAVEN_DATA.brand.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[12px] text-slate-300 hover:text-[#F28C0F] transition-colors block leading-relaxed"
+                >
+                  📍 {VISTAHAVEN_DATA.brand.address}
+                </a>
+                <span className="text-[11px] text-[#F28C0F] font-semibold block">
+                  {VISTAHAVEN_DATA.brand.specialty}
                 </span>
-                <span className="text-[11px] text-[#C79C3F] font-semibold block">
-                  🔑 {VISTAHAVEN_DATA.brand.specialty}
-                </span>
+                <a
+                  href={getWhatsAppUrl("Olá Danielle! Vim pelo rodapé do site e gostaria de agendar uma visita presencial para conhecer as opções de imóveis!")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-500 px-4 py-2 rounded-full transition-all mt-1 cursor-pointer shadow-md shadow-emerald-950/40 active:scale-95 hover:scale-105"
+                >
+                  <MessageSquare size={14} />
+                  <span>{VISTAHAVEN_DATA.brand.ctaSchedule}</span>
+                </a>
               </div>
             </div>
 
             {/* Frase de Impacto Oficial */}
             <div className="flex flex-col items-center lg:items-end gap-3 text-center lg:text-right">
-              <span className="inline-flex items-center gap-1.5 text-[#6FC34B] font-extrabold bg-[#122C58] px-4 py-1.5 rounded-full border border-[#6FC34B]/30 text-xs">
-                <Sparkles size={14} /> Sua Indicação Vale Mais!
-              </span>
               <p className="text-sm font-bold text-white max-w-xs">
                 "{VISTAHAVEN_DATA.brand.slogan}"
               </p>
@@ -225,7 +236,14 @@ export default function App() {
               © {new Date().getFullYear()} {VISTAHAVEN_DATA.brand.brokerName} • {VISTAHAVEN_DATA.brand.tagline}. Todos os direitos reservados.
             </p>
             <div className="flex items-center gap-4 text-slate-400">
-              <span>{VISTAHAVEN_DATA.brand.location}</span>
+              <a
+                href={VISTAHAVEN_DATA.brand.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#F28C0F] transition-colors"
+              >
+                📍 {VISTAHAVEN_DATA.brand.address}
+              </a>
               <span>•</span>
               <button
                 onClick={() => slowScrollTo('top', 1000)}
